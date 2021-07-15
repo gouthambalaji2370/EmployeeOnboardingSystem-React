@@ -4,13 +4,13 @@ import './Notifications.css';
 
 export default function Notifications(props) {
     return (
-        <div id="myModal" className="modal fades" onClick={props.onClose}>
-            <div className="modal-content">
+        <div id="myModal" className="modal-notify fades" onClick={props.onClose}>
+            <div className="modal-content-notify">
                 <div className="modal-body">
-                    <p id="error" className="alert-text">{props.Content}</p>
+                    <p id="error" className="alert-text-notify">{props.Content}</p>
                 </div>
-                <div className="modal-foot">
-                    <button type="button" className="button-group margin-60-left" onClick={props.onClose} id="closemodal">Close</button>
+                <div className="modal-foot-notify">
+                    <button type="button" className="button-group-notify" onClick={props.onClose} id="closemodal">Close</button>
                 </div>
             </div>
         </div>)

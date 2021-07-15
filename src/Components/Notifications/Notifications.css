@@ -1,4 +1,4 @@
-.alert-text{
+.alert-text-notify{
     text-align: center;
     font-weight: medium;
     font-size: medium;
@@ -7,7 +7,7 @@
     button{
       cursor: pointer;
   }
-    .modal {
+    .modal-notify {
       display: block; 
       position: fixed; 
       z-index: 1; 
@@ -20,7 +20,7 @@
       
       background-color: rgba(0,0,0,0.4); 
     }
-    .modal-foot {
+    .modal-foot-notify {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -34,7 +34,7 @@
       margin-bottom: 0;
     line-height: 2.75
   }
-  .modal-content{
+  .modal-content-notify{
     background-color: #ffffff;
     margin: auto;
     padding: 20px;
@@ -44,7 +44,7 @@
   .fades{
       background-color: rgba(0,0,0,0.4);
   }
-  .button-group{
+  .button-group-notify{
       color: white;
       padding: 12px 20px;
       border: 1px solid #ccc;
@@ -53,7 +53,7 @@
       width: 147px;
       height: 50px;
   }
-  .button-group:hover{
+  .button-group-notify:hover{
       border: 1px solid #ccc;
       background-color: #346751;
       color:#D8E3E7;

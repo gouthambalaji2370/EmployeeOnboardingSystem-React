@@ -285,7 +285,7 @@ label{
   }
   .modal-head{
     width: 53%;
-    margin-left: 321px;
+    margin-left: 317px;
     text-align: center;
       background-color: #346751;
       color: white;
@@ -307,13 +307,13 @@ label{
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-  button{
+  /* button{
     background-color: #346751;
     color: #ffffff;
     margin-left: 20px;
     width : 60px;
     height : 30px;
-}
+} */
 
 
 .fa-eye:before {

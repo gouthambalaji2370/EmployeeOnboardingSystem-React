@@ -7,7 +7,7 @@ import logo from "../Styles/images/listerlogo.png";
 import '../Styles/LoginPage.css';
 
 
-export default function LoginPage(props){
+export default function LoginPage(){
   const history = useHistory();
   const { register, handleSubmit, formState: { errors } } = useForm();
     const [userName,setUserName]=useState("");

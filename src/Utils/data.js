@@ -136,6 +136,7 @@ const data = [
       email: 'komali@gmail.com',
       status: 'Rejected',
       createdat:'16/07/2021',
+      reasonForRejection:"Map Coordinates are not pointing to the given address",
       basicDetails:{
         "fatherName":"Ram",
         "motherName":"Shyamala",
@@ -312,6 +313,7 @@ const data = [
       email: 'ja@gmail.com',
       status: 'Rejected',
       createdat:'13/07/2021',
+      reasonForRejection:"Map Coordinates are not pointing to the given address",
       basicDetails:{
         "fatherName":"Ram",
         "motherName":"Shyamala",

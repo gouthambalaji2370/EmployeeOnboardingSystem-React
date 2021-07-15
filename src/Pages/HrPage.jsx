@@ -1,17 +1,10 @@
 import React ,{useState} from 'react';
 import Header from '../Components/Header';
-import UserDetailsView from '../Components/UserDetailsView/UserDetailsView';
 import Notifications from '../Components/Notifications';
 import CreateInvite from '../Components/CreateInvite';
 import HrTable from '../Components/HrTable';
 import styled from 'styled-components';
-// import moment from 'moment';
-// import { AiFillEye } from "react-icons/ai";
-// import axios from 'axios'
-// import { Table } from 'antd';
-import { BiPaperPlane } from "react-icons/bi";
 import '../Styles/HrPage.css';
-import { useEffect } from 'react';
 import data from '../Utils/data.js';
 
 const Styles = styled.div`
@@ -150,70 +143,13 @@ const Styles = styled.div`
 
 export default function HrPage(props){
  
-  useEffect(() => {
-    console.log(data);
-    // axios.get('')
-    //     .then(res => {
-    //         console.log(res.data);
-    //        setData(res.data);
-    //     })
-}, [])
-
-// const openview= ()=>{
-//   console.log();
-// }
-// const opennotification=()=>{
-
-// }
-// const openedit=()=>{
-
-// }
-
-  const [userDetails,setUserDetails]=useState(false);
-  const [approveUser,setApproveUser]=useState(false);
   const [invite,setInvite]=useState(false);
-  const [rejectUser,setRejectUser]=useState(false);
-  const [isSubmitted,setIsSubmitted]=useState(false);
-  const [reason,setReason]=useState("");
-  const submitreason=()=> {
-    setIsSubmitted(true);
-    if(reason!==""){
-      setRejectUser(!rejectUser);
-      setReason("");
-    }
-    console.log(reason);
-  }
- const handleChange = (e) => {
-     setReason(e.target.value);
-};
-  const closeview=()=>{
-    setUserDetails(!userDetails)
-  }
-  const approveview = () =>{
-    setUserDetails(!userDetails)
-    setApproveUser(!approveUser);
-  }
-  const rejectview = () =>{
-    setUserDetails(!userDetails)
-    setRejectUser(!rejectUser);
-  }
-  const rejectback=()=>{
-    setUserDetails(true);
-    setRejectUser(false);
-
-  }
-  const closeall=()=>{
-    setRejectUser(false);
-  }
+  
   const openform=()=>{
     setInvite(!invite)
   }
-  const closeout=()=>{
-    setApproveUser(!approveUser);
-}
-// const onChange=(pagination, filters, sorter, extra)=> {
-//   console.log('params', pagination, filters, sorter, extra);
-// }
+
+
     return(<div>
         <Header logout={props.logout}/>
         <div id="interface">
@@ -229,35 +165,9 @@ export default function HrPage(props){
       <HrTable data={data} />
       </Styles>
   
-  <button  onClick={closeview}>Open Details</button>
+  {/* <button  onClick={closeview}>Open Details</button> */}
   {invite ?<CreateInvite close={openform}></CreateInvite>:<></>}
-  {userDetails ? <UserDetailsView closeView={closeview} approve={approveview} reject={rejectview} employeedetails={data} ></UserDetailsView>:<></>}
-  {approveUser ? <Notifications onClose={closeout} Content={"User details is Forwarded to Greythr"}></Notifications>:<></>}
-  {rejectUser ?  
-  <div id="myModal" className="modal fades">
-      <div className="modal-head">
-        <h4 className="modal-top alert-text">Reason For Rejection</h4>
-        <button type="button" className="modal-close-button" onClick={e=>closeall()}>&times;</button>
-      </div>
-      <div className="modal-content">
-        <div className="modal-body">
-          <div className="formclass">
-            <div className="flex-form">
-              <textarea type="text" name="reason" rows="4" cols="40"  onChange={(e) => handleChange(e)} placeholder="Reason for Rejection..."></textarea>
-              <button className="button-group-modal" onClick={e=>submitreason()}><BiPaperPlane></BiPaperPlane></button>
-            </div>
-            {isSubmitted===true && reason==="" ?<span className="invalid-feedback">
-              <sup>*</sup>reason is required
-            </span>:<></>}
-          </div>
-          <div className="modal-foot-center">
-            <button type="button" className="button-group-reject" onClick={e=>rejectback()}>Back</button>
-          </div>
-
-        </div>
-
-      </div>
-    </div>:<></>}
+  
     </div>
   </div>)
 }

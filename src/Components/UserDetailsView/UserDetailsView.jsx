@@ -1,9 +1,13 @@
 import React,{useState} from 'react';
+import { useEffect } from 'react';
 import { BiMinusCircle } from "react-icons/bi";
 import { BiPlusCircle } from "react-icons/bi";
 import './UserDetailsView.css';
 
 export default function UserDetailsView(props){
+  useEffect(()=>{
+    console.log(props.employeedetails);
+  })
   const [addressDetails,setAddressDetails]=useState(false);
   const [basicDetails,setBasicDetails]=useState(false);
   const openAddressDetails =()=>{
@@ -29,8 +33,8 @@ export default function UserDetailsView(props){
       <div id="basicDetails">
       <div  style={{display:'flex'}}>
             <h3>Basic Details</h3>
-            {!basicDetails ?<button className="view" onClick={e=>openBasicDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
-            {basicDetails ?<button className="view" onClick={e=>openBasicDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}
+            {!basicDetails ?<button className="view-sub" onClick={e=>openBasicDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
+            {basicDetails ?<button className="view-sub" onClick={e=>openBasicDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}
           </div>
           {basicDetails ? 
           <div>
@@ -66,8 +70,8 @@ export default function UserDetailsView(props){
           <div id="addressDetails">
           <div style={{display:'flex'}}>
             <h3>Address Details</h3>
-            {!addressDetails ?<button type="button"  className="view" onClick={e=>openAddressDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
-            {addressDetails ?<button type="button"  className="view" onClick={e=>openAddressDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}
+            {!addressDetails ?<button type="button"  className="view-sub" onClick={e=>openAddressDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
+            {addressDetails ?<button type="button"  className="view-sub" onClick={e=>openAddressDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}
             </div>
         {addressDetails ? 
           <div >
@@ -106,18 +110,18 @@ export default function UserDetailsView(props){
   :<></>}  
 </div>
 </div>
-{props.employeedetails.Status==="Rejected" ? 
+{props.employeedetails.status==="Rejected" ? 
        <div className="flex-form">
           <h4>Reason for Rejection:</h4>
-          <h4 className="invalid-feedback">{props.employeedetails.reasonForRejection}</h4>
+          <h4 className="invalid-feedback-view">{props.employeedetails.reasonForRejection}</h4>
         </div> :<></>} 
 
-        <div className="modal-foot-right">
-          {props.employeedetails.Status !== "Pending" ? <button type="button" className="button-group" onClick={props.closeView}>Close</button>:<></>}
-          {props.employeedetails.Status==="Pending" ?
+        <div className="modal-foot-right-view">
+          {props.employeedetails.status !== "Pending" ? <button type="button" className="button-group-view" onClick={props.closeView}>Close</button>:<></>}
+          {props.employeedetails.status==="Pending" ?
           <div>
-          <button type="button"  className="button-group" onClick={props.approve}>Approve</button>
-          <button type="button" className="button-group" onClick={props.reject}>Reject</button>
+          <button type="button"  className="button-group-view" onClick={props.approve}>Approve</button>
+          <button type="button" className="button-group-view" onClick={props.reject}>Reject</button>
             </div>:<></>}
         </div>
       </div>

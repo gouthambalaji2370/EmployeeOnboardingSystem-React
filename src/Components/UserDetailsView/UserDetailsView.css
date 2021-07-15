@@ -25,9 +25,9 @@
 
   display: none;
 }
-.view{
+.view-sub{
   float: right;
-  background-color: #346751;
+  background-color:#ffffff;
   color: #000;
   border:thick;
   margin-right: 50px;
@@ -73,7 +73,7 @@
   margin-left: 75px;
     justify-content: space-between
 }
-.invalid-feedback{
+.invalid-feedback-view{
   color: red;
 }
 
@@ -179,7 +179,7 @@ label{
 .fades{
     background-color: rgba(0,0,0,0.1);
 }
-.button-group{
+.button-group-view{
     color: white;
     padding: 12px 20px;
     border: 1px solid #ccc;
@@ -188,7 +188,7 @@ label{
     width: 147px;
     height: 50px;
 }
-.button-group:hover{
+.button-group-view:hover{
     border: 1px solid #ccc;
     background-color: #346751;
     color:#D8E3E7;
@@ -196,12 +196,12 @@ label{
     width: 147px;
     height: 50px;
 }
-.modal-foot-right {
+.modal-foot-right-view {
     display: flex;
     padding: .75rem;
     flex-direction: row-reverse;
-    border-bottom-right-radius: calc(.3rem - 1px);
-    border-bottom-left-radius: calc(.3rem - 1px);
+    position: relative;
+    right:70px
     
   }
   .flex-form{

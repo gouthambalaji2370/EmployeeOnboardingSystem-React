@@ -16,18 +16,6 @@ const Input = styled.input.attrs(props => ({
   padding: 0 32px 0 16px;
 `;
 
-const ClearButton = styled.button`
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  height: 34px;
-  width: 32px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const FilterComponent = ({ filterText, onFilter, onClear }) => (
   <>
