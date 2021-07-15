@@ -31,11 +31,13 @@
     float:right;
     flex-direction: row;
     text-align: left;
-    width: 300px;
+    width: 250px;
     height:20px;
     padding: 10px;
     line-height: 26px;
-    margin-left:60px;
+    margin-left:56px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     border-color: black;
     border-radius: 12px;
     border-width: 2px;
@@ -45,9 +47,6 @@
     width:250px;
     height:18px;
     margin-left: 55px;
-  
-    
-    
   }
   #Email{
     width:250px;
@@ -56,6 +55,7 @@
   }
   #role{
     width: 275px;
+    margin-bottom: 29px;
     margin-left: 58px;
     
   }
@@ -67,12 +67,12 @@
   }
   
   label{
-  margin-top: 10px;
   margin-left: 100px;
   
   }
   .rolelabel{
-    margin-top: 15px;
+    margin-left: 98px;
+    margin-top: 23px;
   }
   .create-invite-container {
   display: flex;
@@ -134,9 +134,13 @@
   button{
     cursor: pointer;
   }
-  .modal-close-button{
+  .fields{
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+  .modal-close-button-invite{
     top: 52px;
-    right: 356px;
+    right: 407px;
     position: absolute;
     font-size: 1.2rem;
     font-weight: 700;
@@ -167,39 +171,41 @@
   border: 1px solid #888;
   width: 45.22%;
   margin-top:22px;
+  height: 450px;
   }
   .fades{
     background-color: rgba(0,0,0,0.4);
   }
-  .create-invite-button-group{
-    margin-top: 23px;
+  .button-group-invite{
     color: white;
-    padding: 12px 20px;
-    width: 90px;
     border: 1px solid #ccc;
     background-color: #346751;
-    border-radius: 8px; 
-    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 147px;
     height: 50px;
-  }
-  .form-elements{
-  padding: 5px 5px;
-  }
-  .button-group:hover{
+    margin-top: 10px;
+}
+.button-group-invite:hover{
     border: 1px solid #ccc;
     background-color: #346751;
     color:#D8E3E7;
     border-radius: 8px;
-  
+    width: 147px;
     height: 50px;
+    margin-top: 10px;
+
+    
+}
+  .form-elements{
+  padding: 5px 5px;
   }
+  
   .form-class{
     margin-top: 15px;
     border: 2px solid #346751;
   }
   .create-invite-modal-head{
-    width: 660px;
-    
+    width: 717px;   
     text-align: center;
     background-color: #346751;
     color: white;
@@ -209,8 +215,5 @@
   .password-text{
     margin-left:35px;
   }
-  .fields{
-    margin-left: 50px;
-    margin-top: 10px;
-  }
+
   

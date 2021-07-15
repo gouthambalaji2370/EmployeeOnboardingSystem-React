@@ -155,17 +155,16 @@ export default function HrPage(props){
         <div id="interface">
     <div className="heading-2">
       <h1 style={{position: "absolute",left: "122px", top: "74px"}}>HR Dashboard</h1>
-      <button className="button-group" onClick={e=>openform()} >Create Invite</button>
+      <button className="button-group" style={{position: 'absolute',left: '1141px', top: '192px'}} onClick={e=>openform()} >Create Invite</button>
 
     </div>
-
-        {/* <Table columns={columns} dataSource={data} onChange={onChange} /> */}
-        <Styles>
-
+    
+      
+  
+        <Styles style={{marginTop:"130px"}}>
       <HrTable data={data} />
       </Styles>
   
-  {/* <button  onClick={closeview}>Open Details</button> */}
   {invite ?<CreateInvite close={openform}></CreateInvite>:<></>}
   
     </div>
