@@ -97,18 +97,19 @@
   }
   
   .create-invite-select{
-      width: 275px;
-      height: 41px;
-      line-height: 26px;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      flex-direction: row;
-      margin-left: 57px;
-      text-align: left;
-      border-color: black;
-      border-width: 2px;
-      border-radius: 12px;
-      outline: none;
+  width: 325px;
+  height: 41px;
+  line-height: 26px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: row;
+  margin-left: 70px;
+  text-align: left;
+  border-color: black;
+  border-width: 2px;
+  border-radius: 12px;
+  outline: none;
+  
   }
    /* select:focus{
   width: 330px;
@@ -139,7 +140,7 @@
   }
   .modal-close-button-invite{
     top: 52px;
-    right: 407px;
+    right: 375px;
     position: absolute;
     font-size: 1.2rem;
     font-weight: 700;
@@ -204,7 +205,7 @@
     border: 2px solid #346751;
   }
   .create-invite-modal-head{
-    width: 717px;   
+    width: 651px;   
     text-align: center;
     background-color: #346751;
     color: white;

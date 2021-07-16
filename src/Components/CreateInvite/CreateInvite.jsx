@@ -13,9 +13,9 @@ export default function CreateInvite(props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [role, setRole] = useState("");
-    const [roleState,setRoleState]=useState(false);
     const [password, setPassword] = useState("");
-     const changeName = (e) => {
+
+    const changeName = (e) => {
         clearErrors('firstname');
         setName(e.target.value)
     }
@@ -31,12 +31,9 @@ export default function CreateInvite(props) {
         clearErrors('password');
         setPassword(e.target.value)
     }
-    
+
     function createUser(data) {
         console.log(data);
-        if(role===""){
-            setRoleState(!roleState)
-        }
         const dats2=JSON.stringify(data, null, 4)
         console.log(dats2);
         console.log(name, email, role, password)
@@ -70,7 +67,7 @@ export default function CreateInvite(props) {
                                 className={`${errors.firstname ? 'create-invite-input alert' : 'create-invite-input'}`}
                             />
                             {errors.firstname && (
-                                <div className="create-invite-invalid-feedback"><span>{errors.firstname?.message}</span></div>
+                                <span className="create-invite-invalid-feedback">{errors.firstname?.message}</span>
                             )}
                         </div>
                          <div className="create-invite-container"> 
@@ -79,7 +76,7 @@ export default function CreateInvite(props) {
                                 className="create-invite-input"
                                 autoComplete="off"
                                 placeholder="email"
-                                onChange={changeEmail}
+                                onChange={e => changeEmail(e)}
                                 {...register('email', ({
                                     required: '*Email is required',
                                     pattern: {
@@ -90,31 +87,34 @@ export default function CreateInvite(props) {
                                 className={`${errors.email ? 'create-invite-input alert' : 'create-invite-input'}`}
                             />
                             {errors.email && (
-                                <div className="create-invite-invalid-feedback"><span>{errors.email?.message}</span></div>
+                                <span className="create-invite-invalid-feedback">{errors.email?.message}</span>
                             )}
-                            </div>
-        <div className="create-invite-container">
-        <label className="rolelabel" htmlFor="role">Role:</label>
-        <select  name="role" {...register('role', ({required: '*Role is required' }))}
-          onChange={e=>changeRole(e)} 
-            className={`${errors?.role ? 'create-invite-select alert' : 'create-invite-select'}`}
-        >
-            <option value="" selected>Select Role</option>
-            <option value="Software Engineer">Software Engineer</option>
-            <option value="Senior Software Engineer">Senior Software Engineer</option>
-            <option value="Senior Software Engineer">Associate Software Engineer</option>
-            <option value="HR">HR</option>
+                        </div>
+                        <div className="create-invite-container">
+                            <label className="rolelabel" htmlFor="role">Role:</label>
+                            <select id="role" name="role"
+                                onChange={e => changeName(e)}
+                              {...register('role', ({
+                                    required: '*Role is required',
+                                }))}
+                                className={`${errors?.role ? 'create-invite-select alert' : 'create-invite-select'}`}
+                            >
+                                <option value="" defaultValue>Select Role</option>
+                                <option value="Software Engineer">Software Engineer</option>
+                                <option value="Senior Software Engineer">Senior Software Engineer</option>
+                                <option value="Senior Software Engineer">Associate Software Engineer</option>
+                                <option value="HR">HR</option>
 
-        </select>
-        {errors.role && (
-            <div className="create-invite-invalid-feedback"><span>{errors.role?.message}</span></div>
-        )}
-    </div>
-     
+                            </select>
+                            {errors.role && (
+                                <span className="create-invite-invalid-feedback">{errors.role?.message}</span>
+                            )}
+                        </div>
+                     
                         <div className="create-invite-container">
                             <label htmlFor="email">Password:</label>
                             <input type="password" name="password" id="pass"
-                                onChange={e => changePassword(e)}
+                                onChange={e => changeRole(e)}
                                 {...register('password', ({
                                     required: '*Password is required.',
                                     pattern: {
@@ -129,7 +129,7 @@ export default function CreateInvite(props) {
                                 className={`${errors?.password ? 'create-invite-input alert' : 'create-invite-input'}`}
                                 id="Password" placeholder="Password" onChange={e => changePassword(e)} /><br />
                             {errors.password && (
-                                <div className="create-invite-invalid-feedback" ><span>{errors.password?.message}</span></div>
+                              <span className="create-invite-invalid-feedback">{errors.password?.message}</span>
                             )}
                         </div>
 
