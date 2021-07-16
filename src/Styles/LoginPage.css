@@ -127,11 +127,11 @@ label {
     width: 147px;
     height: 50px;
 }
-.topbar{
+/* .topbar{
     display: flex;
     background: #E6DEDE;
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25) ;
-}
+} */
 .divider{
     margin: 0px;
     border: 0;
@@ -142,7 +142,7 @@ label {
     position: absolute;
     bottom: 0px;
 }
-.heading{
+/* .heading{
 text-align: center;
 color: #F18109;
 font-family: Roboto;
@@ -154,7 +154,7 @@ margin-block-start: 15px;
 padding-left: 489px;
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 padding-right: 100px;
-}
+} */
 .logo-login{  
 position: absolute;
 left: 110px;

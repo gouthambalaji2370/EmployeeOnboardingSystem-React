@@ -13,23 +13,9 @@ export default function CreateInvite(props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [role, setRole] = useState("");
+    const [roleState,setRoleState]=useState(false);
     const [password, setPassword] = useState("");
-    // form validation rules 
-    // const validationSchema = Yup.object().shape({ 
-    //     firstname: Yup.string()
-    //         .required('Employee Name is required'),
-    //     email: Yup.string()
-    //         .required('Email is required')
-    //         .email('Email is invalid'),
-    //     role: Yup.string()
-    //         .required('Role is required'),
-    //     password: Yup.string()
-    //         .min(8, 'Password must be at least 8 characters')
-    //         .required('Password is required'),
-                        
-    // });
-    // const { register, handleSubmit, reset, formState: { errors } ,} = useForm();
-    const changeName = (e) => {
+     const changeName = (e) => {
         clearErrors('firstname');
         setName(e.target.value)
     }
@@ -45,9 +31,12 @@ export default function CreateInvite(props) {
         clearErrors('password');
         setPassword(e.target.value)
     }
-
+    
     function createUser(data) {
         console.log(data);
+        if(role===""){
+            setRoleState(!roleState)
+        }
         const dats2=JSON.stringify(data, null, 4)
         console.log(dats2);
         console.log(name, email, role, password)
@@ -57,10 +46,6 @@ export default function CreateInvite(props) {
             });
             props.close()
     }
-    // function onSubmit(data) {
-    //     // display form data on success
-    //     alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    // }
     return (
         <div className="create-invite-modal" >
             <div className="create-invite-modal-content" >
@@ -94,7 +79,7 @@ export default function CreateInvite(props) {
                                 className="create-invite-input"
                                 autoComplete="off"
                                 placeholder="email"
-                                onChange={e => changeEmail(e)}
+                                onChange={changeEmail}
                                 {...register('email', ({
                                     required: '*Email is required',
                                     pattern: {
@@ -107,32 +92,29 @@ export default function CreateInvite(props) {
                             {errors.email && (
                                 <div className="create-invite-invalid-feedback"><span>{errors.email?.message}</span></div>
                             )}
-                        </div>
-                        <div className="create-invite-container">
-                            <label className="rolelabel" htmlFor="role">Role:</label>
-                            <select id="role" name="role"
-                                onChange={e => changeName(e)}
-                              {...register('role', ({
-                                    required: '*Role is required',
-                                }))}
-                                className={`${errors?.role ? 'create-invite-select alert' : 'create-invite-select'}`}
-                            >
-                                <option value="Select">Select Role</option>
-                                <option value="Software Engineer">Software Engineer</option>
-                                <option value="Senior Software Engineer">Senior Software Engineer</option>
-                                <option value="Senior Software Engineer">Associate Software Engineer</option>
-                                <option value="HR">HR</option>
+                            </div>
+        <div className="create-invite-container">
+        <label className="rolelabel" htmlFor="role">Role:</label>
+        <select  name="role" {...register('role', ({required: '*Role is required' }))}
+          onChange={e=>changeRole(e)} 
+            className={`${errors?.role ? 'create-invite-select alert' : 'create-invite-select'}`}
+        >
+            <option value="" selected>Select Role</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Senior Software Engineer">Senior Software Engineer</option>
+            <option value="Senior Software Engineer">Associate Software Engineer</option>
+            <option value="HR">HR</option>
 
-                            </select>
-                            {errors.role && (
-                                <div className="create-invite-invalid-feedback"><span>{errors.role?.message}</span></div>
-                            )}
-                        </div>
-                     
+        </select>
+        {errors.role && (
+            <div className="create-invite-invalid-feedback"><span>{errors.role?.message}</span></div>
+        )}
+    </div>
+     
                         <div className="create-invite-container">
                             <label htmlFor="email">Password:</label>
                             <input type="password" name="password" id="pass"
-                                onChange={e => changeRole(e)}
+                                onChange={e => changePassword(e)}
                                 {...register('password', ({
                                     required: '*Password is required.',
                                     pattern: {

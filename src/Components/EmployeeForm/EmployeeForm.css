@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+
+.topbar{
+display: flex;
+position: absolute;
+top: 0px;
+left: 0px;
+background:#D8E3E7;
+width: 100%;
+height: 72px;
+box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25) ;
+}
+.heading{
+text-align: center;
+color: #346751;
+font-family: 'Times New Roman', Times, serif,'Roboto';
+font-style: normal;
+font-weight: bold;
+font-size: 29px;
+line-height: 35px;
+margin-left: 40px;
+margin-block-start: 15px;
+padding-left: 280px;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+padding-right: 100px;
+
+}
+
+.logo{
+padding-left: 30px;
+padding-top: 19px;
+width: 158px;
+height: 50px;
+}
+.logout-btn{
+position: absolute;
+  color:#346751;
+  background-color: #D8E3E7;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  right: -318px;
+  top: -1px;
+  margin-left: 60px;
+  width: 60px;
+  height: 60px;
+}
+.sub-division{
+    background-color:#2F5D62 ;
+    height:50px;
+    margin-right:-15px;
+    margin-left:-15px; 
+    margin-top: 66px;
+}
+.logout{
+color: #346751;
+border: none;
+font-size: medium;
+font-weight: bold;
+text-decoration: none;
+margin-top: 30px;
+margin-left: 300px;
+width: 60px;
+height: 60px;
+}
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+
+}
+
+#regForm {
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+.container {
+    display: flex;
+
+    padding: 15px;
+}
+
+input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: left;
+    width: 300px;
+    line-height: 26px;
+    margin-right: 10px;
+    border-color: black;
+    border-radius: 12px;
+    border-width: 2px;
+    outline: none;
+    
+    
+
+    
+}
+
+
+
+.checkboxstyle{
+    width: 30px;
+}
+
+label {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+}
+
+
+
+.radio {
+
+    display: flex;
+
+}
+
+.wholefieldset {
+    margin: 0 auto 0 auto;
+    margin-top: -18px;
+    border-color: #2F5D62;
+    border-style: solid;
+    width: 1168px;
+    margin-left: -150px;
+}
+
+.wholefieldset1 {
+    margin: 0 auto 0 auto;
+    margin-top: -18px;
+    border-color: #2F5D62;
+    border-style: solid;
+    width: 1168px;
+    margin-left: -150px;
+}
+
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+.genderlabel {
+    margin-left: 25px;
+}
+
+#male {
+    margin-left: 10px;
+
+    width: 30px;
+}
+
+#female {
+    margin-left: 20px;
+    width: 30px;
+}
+
+
+/* .f {
+margin-left: -200px;
+} */
+
+.paragraphgender {
+    margin: 0;
+    margin-left: -10px;
+}
+
+button {
+    background-color: #2F5D62;
+    color: #ffffff;
+    border: black;
+    border-width: 4px;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+    margin-right: 400px;
+    margin-top: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#field1 {
+    border: 0;
+}
+#prevBtn {
+background-color: #D8E3E7;
+border-radius: 15px;
+
+
+
+}
+
+#nextBtn {
+background-color: #2F5D62;
+border-radius: 15px;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    /* background-color: #bbbbbb; */
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #04AA6D;
+
+}
+
+#one {
+    padding-top: 10px;
+    margin-top: -52px;
+    margin-left: 18px;
+    color: white;
+}
+
+#two {
+    padding-left: 14px;
+    padding-top: 10px;
+    margin-top: -55px;
+    color: white;
+}
+
+#three {
+    padding-left: 14px;
+    padding-top: 10px;
+    margin-left: 5px;
+    margin-top: -45px;
+    color: white;
+}
+
+#basictag {
+    margin-top: -53.4px;
+    margin-right: -3px;
+    margin-left: -3px
+}
+
+.row {
+    display: flex;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.column2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.column2 div {
+    height: 62px;
+}
+
+.column1 div {
+    height: 62px;
+}
+
+.countries{
+    width: 270px;
+    border-color: black;
+  
+    border-color: black;
+    border-width: 2px;
+    border-radius: 12px;
+    
+}
+.countries:focus{
+    width: 270px;
+    border-color: black;
+  
+    border-color: black;
+    border-width: 2px;
+    border-radius: 12px;
+    
+}
+
+
+.states,
+.cities {
+    width: 275px;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 12px;
+   
+}
+.states,
+.cities:focus {
+    width: 275px;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 12px;
+   
+}
+
+.wholefieldset1 {
+
+    margin-left: -150px;
+}
+
+.secondbutton {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 685px;
+}
+
+.firstbutton {
+    /* margin-left: auto; */
+    margin-left: 400px;
+    margin-top: 25px;
+
+
+}
+
+.secondbutton .previousbtn,
+.resetbtn,
+.submitbtn {
+    margin: 0;
+    margin-right: 5px;
+
+
+
+
+
+}
+
+.previousbtn,
+.resetbtn {
+    color: black;
+}
+
+#declaration {
+    width: 20px;
+    
+    border-color: #2F5D62;
+}
+
+.acknowledgement {
+    
+    width: 700px;
+
+}
+
+
+/* FORMMMMMMMMMMMS */
+.progressbar {
+counter-reset: step;
+}
+
+.progressbar li {
+list-style: none;
+display: inline-block;
+width: 30.33%;
+position: relative;
+text-align: center;
+cursor: pointer;
+}
+
+.progressbar li:before {
+content: counter(step);
+counter-increment: step;
+width: 30px;
+height: 30px;
+line-height: 30px;
+border: 1px solid #ddd;
+border-radius: 100%;
+display: block;
+text-align: center;
+margin: 0 auto 10px auto;
+background-color: #2F5D62;
+color: #2F5D62;
+}
+
+.progressbar li:after {
+content: "";
+position: absolute;
+width: 100%;
+height: 3px;
+background-color:#2F5D62;
+top: 15px;
+left: -47.5%;
+z-index: -1;
+}
+
+.progressbar li:first-child::after {
+content: none;
+}
+
+.class1 {
+margin-top: 130px;
+margin-left: 300px;
+}
+
+.progressbar li.active {
+color: #2F5D62 ;
+
+}
+.progressbar li.active:before {
+border-color: #2F5D62;
+background-color:#2F5D62;
+}
+
+.progressbar li.active + li:after {
+background-color: #2F5D62
+} 
