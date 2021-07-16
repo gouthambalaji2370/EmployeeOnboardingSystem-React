@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form"
 import axios from 'axios'
-// import './EmployeeForm.css'
+import './EmployeeForm.css'
 
 
 export default function AddressDetails(props) {
@@ -17,29 +17,29 @@ export default function AddressDetails(props) {
                     <div class="column1">
                         <div class="container">
                             <label for="presentflatname"><b>Building No/Flat Name</b></label>
-                            <input type="text" placeholder="Enter Building No /Flat Name" name="presentflatname"
+                            <input type="text" className="input-address-form" placeholder="Enter Building No /Flat Name" name="presentflatname"
                                 id="presentflatname" required></input>
                         </div>
                         <div class="container">
                             <label for="presentstreetname"><b>Street</b></label>
-                            <input type="text" placeholder="Enter Street" name="presentstreetname"
+                            <input type="text" placeholder="Enter Street" name="presentstreetname" className="input-address-form"
                                 id="presentstreetname" required></input>
                         </div>
                         <div class="container">
                             <label for="presentarea"><b>Area</b></label>
-                            <input type="text" placeholder="Area" name="presentarea" id="presentarea" required></input>
+                            <input type="text" placeholder="Area" className="input-address-form" name="presentarea" id="presentarea" required></input>
                         </div>
                         <div class="container">
                             <label for="presentcountry"><b>Country</b></label>
-                            <select name="presentcountry" class="countries" id="countryId">
-                                <option value="presentcountry" class="presentcountry" id="presentcountry">Select Country</option>
+                            <select name="presentcountry" class="select-address-form" id="countryId">
+                                <option value="presentcountry" class="presentcountry"  id="presentcountry">Select Country</option>
                             </select>
                         </div>
                     </div>
                     <div class="column2">
                         <div class="container">
                             <label for="presentstate"><b>State</b></label>
-                            <select name="presentstate" class="states" id="stateId">
+                            <select name="presentstate" class="select-address-form" id="stateId">
                                 <option value="2">Select State</option>
                             </select>
                         </div>
@@ -52,11 +52,11 @@ export default function AddressDetails(props) {
                         <div class="container">
                             <label for="presentmapcoordinates"><b>Map Coordinates</b></label>
                             <input type="text" placeholder="Enter Map Coordinates" name="presentmapcoordinates"
-                                id="presentmapcoordinates" required style={{ width: "350px" }}></input>
+                                id="presentmapcoordinates" className="input-address-form" required style={{ width: "350px" }}></input>
                         </div>
                         <div class="container">
                             <label for="presentpincode"><b>Pincode</b></label>
-                            <input type="text" placeholder="Pincode" name="presentpincode" id="presentpincode"
+                            <input type="text" placeholder="Pincode" className="input-address-form" name="presentpincode" id="presentpincode"
                                 required></input>
                         </div>
                     </div>
@@ -76,26 +76,32 @@ export default function AddressDetails(props) {
                     <div class="column1">
                         <div class="container">
                             <label for="permanentflatname"><b>Building No/Flat Name</b></label>
-                            <input type="text" placeholder="Enter Building No /Flat Name" name="permanentflatname"
+                            <input type="text" className="input-address-form" placeholder="Enter Building No /Flat Name" name="permanentflatname"
                                 id="permanentflatname" required></input>
                         </div>
                         <div class="container">
                             <label for="permanentstreetname"><b>Street</b></label>
-                            <input type="text" placeholder="Enter Street" name="permanentstreetname"
+                            <input type="text" className="input-address-form" placeholder="Enter Street" name="permanentstreetname"
                                 id="permanentstreetname" required></input>
                         </div>
                         <div class="container">
                             <label for="permanentarea"><b>Area</b></label>
-                            <input type="text" placeholder="Area" name="permanentarea" id="permanentarea" required></input>
+                            <input type="text" className="input-address-form" placeholder="Area" name="permanentarea" id="permanentarea" required></input>
                         </div>
                         <div class="container">
                             <label for="permanentcountry"><b>Country</b></label>
-                            <select name="permanentcountry" class="countries" id="countryId">
+                            <select name="permanentcountry" className="select-address-form" id="countryId">
                                 <option value="4" class="permanentcountry" id="permanentcountry">Select Country</option>
                             </select>
                         </div>
                     </div>
                     <div class="column2">
+                        <div class="container">
+                            <label for="presentstate"><b>State</b></label>
+                            <select name="presentstate" class="select-address-form" id="stateId">
+                                <option value="2">Select State</option>
+                            </select>
+                        </div>
                         <div class="container">
                             <label for="permanentcity"><b>District</b></label>
                             <select name="permanentcity" class="cities" id="cityId">
@@ -104,12 +110,12 @@ export default function AddressDetails(props) {
                         </div>
                         <div class="container">
                             <label for="permanentmapcoordinates"><b>Map Coordinates</b></label>
-                            <input type="text" placeholder="Enter Map Coordinates" name="permanentmapcoordinates"
+                            <input type="text" className="input-address-form" placeholder="Enter Map Coordinates" name="permanentmapcoordinates"
                                 id="permanentmapcoordinates" style={{ width: "350px" }} required></input>
                         </div>
                         <div class="container">
                             <label for="permanentpincode"><b>Pincode</b></label>
-                            <input type="text" placeholder="Pincode" name="permanentpincode" id="permanentpincode"
+                            <input type="text" className="input-address-form" placeholder="Pincode" name="permanentpincode" id="permanentpincode"
                                 required></input>
                         </div>
                     </div>
