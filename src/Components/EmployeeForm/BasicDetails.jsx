@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { useForm } from "react-hook-form"
 import AddressDetails from './AddressDetails';
 import axios from 'axios';
-import './EmployeeForm.css'
+// import './EmployeeForm.css'
 
 
 export default function BasicDetails(){
