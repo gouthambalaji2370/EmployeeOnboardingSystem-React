@@ -41,7 +41,7 @@ export default function LoginPage(){
           <div className="formdiv">
             <Form onSubmit={handleSubmit(loginmethod)}>
               <div className="container">
-                <label className="control-label" htmlFor="email">Username:</label>
+                <label className="login-label" htmlFor="email">Username:</label>
                 <input type="text" id="name" name="user_email"  autoComplete="off"
                 {...register('user_email',({
                   required: '*Username is required',
@@ -59,7 +59,7 @@ export default function LoginPage(){
               
       
               <div className="container">
-                <label className="control-label" htmlFor="email">Password:</label>
+                <label className="login-label" htmlFor="email">Password:</label>
                 <input type="password"  name="user_password"  id="pass"
                 {...register('user_password',({
                   required: '*Password is required.',

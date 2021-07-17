@@ -55,7 +55,7 @@ export default function CreateInvite(props) {
                 <Form className="form-class" onSubmit={handleSubmit(createUser)} onReset={reset}>
                 <div className="fields">
                         <div className="create-invite-container">
-                            <label htmlFor="name">Name:</label>
+                            <label className="other-label" htmlFor="name">Name:</label>
                             <input id="username" name="firstname"
                                 className="create-invite-input"
                                 autoComplete="off"
@@ -71,7 +71,7 @@ export default function CreateInvite(props) {
                             )}
                         </div>
                          <div className="create-invite-container"> 
-                            <label htmlFor="name">Email:</label>
+                            <label className="other-label" htmlFor="name">Email:</label>
                             <input id="email" name="email"
                                 className="create-invite-input"
                                 autoComplete="off"
@@ -93,7 +93,7 @@ export default function CreateInvite(props) {
                         <div className="create-invite-container">
                             <label className="rolelabel" htmlFor="role">Role:</label>
                             <select id="role" name="role"
-                                onChange={e => changeName(e)}
+                                onChange={e => changeRole(e)}
                               {...register('role', ({
                                     required: '*Role is required',
                                 }))}
@@ -112,9 +112,9 @@ export default function CreateInvite(props) {
                         </div>
                      
                         <div className="create-invite-container">
-                            <label htmlFor="email">Password:</label>
+                            <label className="other-label" htmlFor="password">Password:</label>
                             <input type="password" name="password" id="pass"
-                                onChange={e => changeRole(e)}
+                                onChange={e => changePassword(e)}
                                 {...register('password', ({
                                     required: '*Password is required.',
                                     pattern: {

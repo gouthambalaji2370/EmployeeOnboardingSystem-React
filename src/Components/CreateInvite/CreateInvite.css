@@ -36,7 +36,6 @@
     padding: 10px;
     line-height: 26px;
     margin-left:56px;
-    margin-top: 5px;
     margin-bottom: 10px;
     border-color: black;
     border-radius: 12px;
@@ -66,9 +65,9 @@
    
   }
   
-  label{
+  .other-label{
   margin-left: 100px;
-  
+  margin-top: 10px;
   }
   .rolelabel{
     margin-left: 98px;

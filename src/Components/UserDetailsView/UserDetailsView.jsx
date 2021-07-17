@@ -32,7 +32,7 @@ export default function UserDetailsView(props){
     <div className="modal-body form-class">
       <div id="basicDetails">
       <div  style={{display:'flex'}}>
-            <h3>Basic Details</h3>
+            <h3 className="user-heading">Basic Details</h3>
             {!basicDetails ?<button className="view-sub" onClick={e=>openBasicDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
             {basicDetails ?<button className="view-sub" onClick={e=>openBasicDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}
           </div>

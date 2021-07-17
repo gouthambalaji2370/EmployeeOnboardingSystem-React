@@ -17,7 +17,7 @@ body {
     right: 50px;
 }
 
-label {
+.login-label {
     margin-top: 20px;
     height: 20px;
     flex: 0 0 130px;
@@ -167,6 +167,4 @@ button{
     cursor: pointer;
 }
 .class1{
-    margin-left: 165px;
-    color: red;
-}
+    margin-left: 165px;}

@@ -144,9 +144,7 @@ textarea {
   border-width: 2px;
   outline: none;   
 }
-label{
-  margin-top: 15px;
-}
+
 .container {
   display: flex;
   justify-content: space-evenly;

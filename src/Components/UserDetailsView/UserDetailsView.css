@@ -1,7 +1,7 @@
 .alert-text{
     text-align: center;
   }
-  h3{
+  .user-heading{
     margin-top: 5px;
     font-size: 1.1em;
     margin-bottom: 5px;
@@ -77,24 +77,7 @@
   color: red;
 }
 
-  /* input {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    text-align: left;
-    width: 300px;
-    Height:20px;
-    padding: 10px;
-    line-height: 26px;
-    margin-right: 10px;
-    border-color: black;
-    border-radius: 12px;
-    border-width: 2px;
-    outline: none;   
-} */
-label{
-  margin-top: 15px;
-}
+
 .container {
   display: flex;
   justify-content: space-evenly;
