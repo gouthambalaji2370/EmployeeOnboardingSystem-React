@@ -1,71 +1,9 @@
-/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-
-* {
-    box-sizing: border-box;
-}
-
-
-
-
-
-#regForm {
-    background-color: #ffffff;
-    margin: 100px auto;
-    font-family: Raleway;
-    padding: 40px;
-    width: 70%;
-    min-width: 300px;
-}
-
-h1 {
-    text-align: center;
-}
-
-
-
-
-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    text-align: left;
-    width: 300px;
-    line-height: 26px;
-    margin-right: 10px;
-    border-color: black;
-    border-radius: 12px;
-    border-width: 2px;
-    outline: none;
-    padding-left: 8px;
-}
-
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 
 .checkboxstyle{
     width: 30px;
 }
-
-label {
-    height: 20px;
-    flex: 0 0 200px;
-    margin-left: 10px;
-}
-
-
-
-.radio {
-
-    display: flex;
-
-}
-
-
-
-
-
-
-
-
 
 
 .row {
@@ -83,11 +21,11 @@ label {
 }
 
 .column2 div {
-    height: 62px;
+    height: 48px;
 }
 
 .column1 div {
-    height: 62px;
+    height: 48px;
 }
 
 .blood-select{
@@ -161,9 +99,7 @@ span{
 }
 
 .acknowledgement {
-    
-    width: 700px;
-
+    width: 478px;
 }
 
 
@@ -233,7 +169,8 @@ background-color:#2F5D62;
 
 .progressbar li.active + li:after {
 background-color: #2F5D62
-}  */
+} 
+
 .progressbar li.active {
     color: #2F5D62 ;
     
@@ -246,7 +183,9 @@ background-color: #2F5D62
     .progressbar li.active + li:after {
     background-color: #2F5D62
     } 
+
 .employee-form-container {
+  
     display: flex;
     padding: 15px;
 }
@@ -335,28 +274,36 @@ background-color: #2F5D62
 }
 
 
-.genderlabel {
-    margin-top: 8px;
-    margin-left: 25px;
-}
+
 .radio{
     display: flex;
-    margin-left: 88px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 29px;
 }
+.gendersetup{
+    display: flex;
+    margin-left: 134px;
+}
+
+.genderlabel {
+    margin-left: 25px;
+}
+
 #male {
     margin-left: 10px;
-    margin-top: 10px;
+
     width: 30px;
 }
 
 #female {
     margin-left: 20px;
-    margin-top: 10px;
     width: 30px;
 }
 
 .paragraphgender {
-    margin-top: 7px;
+    margin: 0;
+    margin-left: -10px;
 }
 .wholefieldset1 {
     margin: 0 auto 0 auto;
@@ -380,16 +327,6 @@ background-color: #2F5D62
 .column2 {
     display: flex;
     flex-direction: column;
-}
-
-.column2 div {
-    height: 43px;
-    width: 531px;
-}
-
-.column1 div {
-    height: 43px;
-    width: 531px;
 }
 #field1 {
     border: 0;
@@ -462,8 +399,18 @@ button{
 }
 
 .employee-label {
+    display: flex;
+    height: 20px;
+    flex: 0 0 200px;
     margin-top: 16px;
     margin-left: 40px;
+}
+.address-label {
+    display: flex;
+    height: 20px;
+    flex: 0 0 175px;
+    margin-top: 16px;
+    margin-left: 35px;
 }
 .alerts{
     border-color: red;
@@ -474,18 +421,19 @@ button{
 }
 .address-form-invalid-feedback{
     color: red;
+    margin-left: 111px;
 }
 .input-employee-form {
     display: flex;
-    margin-left: 3rem;
     flex-direction: row;
     justify-content: flex-end;
     text-align: left;
     width: 300px;
     line-height: 26px;
     margin-right: 10px;
-    border-radius: 20px;
-    margin-top: 12px;
+    border-color: black;
+    border-radius: 12px;
+    border-width: 2px;
     outline: none;
     padding-left: 8px;
 }
@@ -501,6 +449,7 @@ button{
     background-color: #2F5D62;
     color: #ffffff;
     border: black;
+    border-radius: 15px;
     border-width: 4px;
     padding: 10px 20px;
     font-size: 17px;

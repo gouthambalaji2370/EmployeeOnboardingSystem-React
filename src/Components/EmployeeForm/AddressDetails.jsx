@@ -95,7 +95,7 @@ export default function AddressDetails(props) {
 
                                 <div className="column1">
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentflatname"><b>Building No/Flat Name</b></label>
+                                        <label className="address-label" htmlFor="presentflatname"><b>Building No/Flat Name</b></label>
                                         <input type="text" className="input-address"
                                             {...register('presentflatname', ({
                                                 required: '*present flat name is required'
@@ -109,7 +109,7 @@ export default function AddressDetails(props) {
                                     )}
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentstreetname"><b>Street</b></label>
+                                        <label className="address-label" htmlFor="presentstreetname"><b>Street</b></label>
                                         <input type="text"
                                             {...register('presentstreetname', ({
                                                 required: '*present street name is required'
@@ -122,7 +122,7 @@ export default function AddressDetails(props) {
                                     )}
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentarea"><b>Area</b></label>
+                                        <label className="address-label" htmlFor="presentarea"><b>Area</b></label>
                                         <input type="text"
                                             {...register('presentarea', ({
                                                 required: '*present area  is required'
@@ -131,12 +131,12 @@ export default function AddressDetails(props) {
                                             placeholder="Area" name="presentarea" />
                                     </div>
                                     {errors.presentarea && (
-                                        <div className="address-form-invalid-feedback">{errors.presentarea?.message}</div>
+                                        <div className="address-form-invalid-feedback" style={{marginLeft:"60px"}}>{errors.presentarea?.message}</div>
                                     )}
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentcountry"><b>Country</b></label>
+                                        <label className="address-label" htmlFor="presentcountry"><b>Country</b></label>
                                         <select name="presentcountry"
                                             {...register('presentcountry', ({
                                                 required: '*present country is required'
@@ -155,7 +155,7 @@ export default function AddressDetails(props) {
 
                                 <div className="column2">
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentstate"><b>State</b></label>
+                                        <label className="address-label" htmlFor="presentstate"><b>State</b></label>
                                         <select name="presentstate"
                                             {...register('presentstate', ({
                                                 required: '*present state is required'
@@ -172,7 +172,7 @@ export default function AddressDetails(props) {
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentcity"><b>District</b></label>
+                                        <label className="address-label" htmlFor="presentcity"><b>District</b></label>
                                         <input type="text"  {...register('presentcity', ({
                                             required: '*present city is required'
                                         }))}
@@ -187,7 +187,7 @@ export default function AddressDetails(props) {
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentmapcoordinates"><b>Map Coordinates</b></label>
+                                        <label className="address-label" htmlFor="presentmapcoordinates"><b>Map Coordinates</b></label>
                                         <input type="text" {...register('presentmapcoordinates', ({
                                             required: '*present map coordinates is required'
                                         }))}
@@ -196,12 +196,12 @@ export default function AddressDetails(props) {
                                         />
                                     </div>
                                     {errors.presentmapcoordinates && (
-                                        <div className="address-form-invalid-feedback">{errors.presentmapcoordinates?.message}</div>
+                                        <div className="address-form-invalid-feedback" style={{marginLeft:"200px"}}>{errors.presentmapcoordinates?.message}</div>
                                     )}
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="presentpincode"><b>Pincode</b></label>
+                                        <label className="address-label" htmlFor="presentpincode"><b>Pincode</b></label>
                                         <input type="text" {...register('presentpincode', ({
                                             required: '*present pincode is required'
                                         }))}
@@ -209,7 +209,7 @@ export default function AddressDetails(props) {
                                         />
                                     </div>
                                     {errors.presentpincode && (
-                                        <div className="address-form-invalid-feedback">{errors.presentpincode?.message}</div>
+                                        <div className="address-form-invalid-feedback" style={{marginLeft:"136px"}}>{errors.presentpincode?.message}</div>
                                     )}
 
                                 </div>
@@ -219,7 +219,6 @@ export default function AddressDetails(props) {
                                 <input type="checkbox" value="" className="checkboxstyle" />
 
                                 <b className="acknowledgement"
-                                // style="width: 800px;float: left;"
                                 >Select this Checkbox if the
                                     present
                                     and permanent addresses are
@@ -236,7 +235,7 @@ export default function AddressDetails(props) {
                                 <div className="column1">
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentflatname"><b>Building No/Flat Name</b></label>
+                                        <label className="address-label" htmlFor="permanentflatname"><b>Building No/Flat Name</b></label>
                                         <input type="text"  {...register('permanentflatname', ({
                                             required: '*permanent flat name is required'
                                         }))}
@@ -251,7 +250,7 @@ export default function AddressDetails(props) {
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentstreetname"><b>Street</b></label>
+                                        <label className="address-label" htmlFor="permanentstreetname"><b>Street</b></label>
                                         <input type="text" {...register('permanentstreetname', ({
                                             required: '*permanent street name is required'
                                         }))}
@@ -265,7 +264,7 @@ export default function AddressDetails(props) {
                                     )}
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentarea"><b>Area</b></label>
+                                        <label className="address-label" htmlFor="permanentarea"><b>Area</b></label>
                                         <input type="text" {...register('permanentarea', ({
                                             required: '*permanent area is required'
                                         }))}
@@ -273,14 +272,14 @@ export default function AddressDetails(props) {
                                         />
                                     </div>
                                     {errors.permanentarea && (
-                                        <div className="address-form-invalid-feedback">{errors.permanentarea?.message}</div>
+                                        <div className="address-form-invalid-feedback" style={{marginLeft:"92px"}}>{errors.permanentarea?.message}</div>
                                     )}
 
 
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentcountry"><b>Country</b></label>
+                                        <label className="address-label" htmlFor="permanentcountry"><b>Country</b></label>
                                         <select name="permanentcountry"
                                             {...register('permanentcountry', ({
                                                 required: '*present country is required'
@@ -302,7 +301,7 @@ export default function AddressDetails(props) {
 
                                 <div className="column2">
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentstate"><b>State</b></label>
+                                        <label className="address-label" htmlFor="permanentstate"><b>State</b></label>
                                         <select name="permanentstate"
                                             {...register('permanentstate', ({
                                                 required: '*permanent state is required'
@@ -319,7 +318,7 @@ export default function AddressDetails(props) {
                                         <div className="address-form-invalid-feedback">{errors.permanentstate?.message}</div>
                                     )}
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentcity"><b>District</b></label>
+                                        <label className="address-label" htmlFor="permanentcity"><b>District</b></label>
                                         <input type="text" {...register('permanentcity', ({
                                             required: '*permanent city is required'
                                         }))}
@@ -334,7 +333,7 @@ export default function AddressDetails(props) {
                                     )}
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentmapcoordinates"><b>Map Coordinates</b></label>
+                                        <label className="address-label" htmlFor="permanentmapcoordinates"><b>Map Coordinates</b></label>
                                         <input type="text" {...register('permanentmapcoordinates', ({
                                             required: '*permanent map coordinates is required'
                                         }))}
@@ -344,13 +343,13 @@ export default function AddressDetails(props) {
                                         />
                                     </div>
                                     {errors.permanentmapcoordinates && (
-                                        <div className="address-form-invalid-feedback">{errors.permanentmapcoordinates?.message}</div>
+                                        <div style={{marginLeft:"200px"}} className="address-form-invalid-feedback">{errors.permanentmapcoordinates?.message}</div>
                                     )}
 
 
 
                                     <div className="employee-form-container">
-                                        <label className="employee-label" htmlFor="permanentpincode"><b>Pincode</b></label>
+                                        <label className="address-label" htmlFor="permanentpincode"><b>Pincode</b></label>
                                         <input type="text"  {...register('permanentpincode', ({
                                             required: '*permanent pincode is required'
                                         }))}
@@ -359,7 +358,7 @@ export default function AddressDetails(props) {
                                         />
                                     </div>
                                     {errors.permanentpincode && (
-                                        <div className="address-form-invalid-feedback">{errors.permanentpincode?.message}</div>
+                                        <div className="address-form-invalid-feedback" style={{marginLeft:"136px"}}>{errors.permanentpincode?.message}</div>
                                     )}
 
 

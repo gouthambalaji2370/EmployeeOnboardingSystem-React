@@ -191,7 +191,7 @@ export default function EmployeeForm(){
 
                         <div className="radio">
                             <label className="employee-label" htmlFor="gender" className="genderlabel"><b>Gender</b></label>
-                            <input type="radio" id="male" name="gender"     {...register('gender', ({
+                            <div className="gendersetup"><input type="radio" id="male" name="gender"     {...register('gender', ({
                                 required: '*gender is required',
                             }))} value="male"  />
                             <p className="paragraphgender">Male</p>
@@ -199,6 +199,7 @@ export default function EmployeeForm(){
                                 required: '*gender is required',
                             }))} value="female"  />
                             <p className="paragraphgender">Female</p>
+                            </div>
                         </div>
                         {errors.gender && (
                                 <div className="form-invalid-feedback">{errors.gender?.message}</div>

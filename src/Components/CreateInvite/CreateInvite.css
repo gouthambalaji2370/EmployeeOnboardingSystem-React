@@ -35,8 +35,8 @@
     height:20px;
     padding: 10px;
     line-height: 26px;
-    margin-left:56px;
-    margin-bottom: 10px;
+    margin-left:79px;
+    margin-bottom: 24px;
     border-color: black;
     border-radius: 12px;
     border-width: 2px;
@@ -45,7 +45,7 @@
   #username{
     width:250px;
     height:18px;
-    margin-left: 55px;
+    margin-left: 70px;
   }
   #Email{
     width:250px;
@@ -55,14 +55,13 @@
   #role{
     width: 275px;
     margin-bottom: 29px;
-    margin-left: 58px;
+    margin-left: 89px;
     
   }
   #password{
     width: 250px;
     height:18px;
-    margin-left: 43px;
-   
+    margin-left: 53px;   
   }
   
   .other-label{

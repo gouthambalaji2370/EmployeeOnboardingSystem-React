@@ -113,7 +113,7 @@ export default function CreateInvite(props) {
                      
                         <div className="create-invite-container">
                             <label className="other-label" htmlFor="password">Password:</label>
-                            <input type="password" name="password" id="pass"
+                            <input type="password" name="password" id="password"
                                 onChange={e => changePassword(e)}
                                 {...register('password', ({
                                     required: '*Password is required.',
@@ -127,7 +127,7 @@ export default function CreateInvite(props) {
                                     }
                                 }))}
                                 className={`${errors?.password ? 'create-invite-input alert' : 'create-invite-input'}`}
-                                id="Password" placeholder="Password" onChange={e => changePassword(e)} /><br />
+                                placeholder="Password" onChange={e => changePassword(e)} /><br />
                             {errors.password && (
                               <span className="create-invite-invalid-feedback">{errors.password?.message}</span>
                             )}
