@@ -13,15 +13,9 @@ export default function EmployeeForm(){
        setCurrent(0)
    }
     function getBasicDetails(data) {
-        if(BasicDetails ==={}){
         console.log(data);
         setCurrent(1);
         setBasicDetails(data);
-    }
-        else{
-            setCurrent(1);
-
-        }
       
     }
     return(

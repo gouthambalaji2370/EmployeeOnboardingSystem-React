@@ -14,7 +14,24 @@ export default function AddressDetails(props) {
     const [content, setContent] = useState("");
     const [presentCountryName, setPresentCountryName] = useState("");
     const [permanentCountryName, setPermanentCountryName] = useState("");
+    const [presentCountryCode, setPresentCountryCode] = useState(null);
+    const [permanentCountryCode, setPermanentCountryCode] = useState(null);
+    const [presentStateCode, setPresentStateCode] = useState(null);
+    const [permanentStateCode, setPermanentStateCode] = useState(null);
+    const [presentFlatName,setPresentFlatName]=useState("");
+    const [presentStreetName,setPresentStreetName]=useState("");
+    const [presentArea,setPresentArea]=useState("");
+    const [presentCity,setPresentCity]=useState("");
+    const [presentMapCoordinates,setPresentMapCoordinates]=useState("");
+    const [presentPincode,setPresentPinCode]=useState("");
+    const [permanentFlatName,setPermanentFlatName]=useState("");
+    const [permanentStreetName,setPermanentStreetName]=useState("");
+    const [permanentArea,setPermanentArea]=useState("");
+    const [permanentCity,setPermanentCity]=useState("");
+    const [permanentMapCoordinates,setPermanentMapCoordinates]=useState("");
+    const [permanentPincode,setPermanentPinCode]=useState("");
     const [openAlert, setOpenAlert] = useState(false);
+    const [isChecked,setIsChecked]=useState(false);
     const closeout = () => {
         setOpenAlert(!openAlert);
     }
@@ -28,34 +45,44 @@ export default function AddressDetails(props) {
     }, [])
     const onChangeCountrypresent = (e) => {
         console.log("present country", e.target.value);
+        setPresentCountryCode(e.target.value);
         setPresentStateInfo(country[e.target.value].States);
         setPresentCountryName(country[e.target.value].CountryName);
 
     }
     const onChangeCountrypermanent = (e) => {
         console.log("permanent country", e.target.value);
+        setPermanentCountryCode(e.target.value);
         setPermanentStateInfo(country[e.target.value].States);
         setPermanentCountryName(country[e.target.value].CountryName);
     }
 
     const onChangeStatepresent = (e) => {
         console.log("present state", e.target.value);
+        setPresentStateCode(e.target.value);
         setPresentStateName(presentStateInfo[e.target.value].StateName)
     }
     const onChangeStatepermanent = (e) => {
         console.log("permanent state", e.target.value);
+        setPermanentStateCode(e.target.value);
         setPermanentStateName(permanentStateInfo[e.target.value].StateName)
     }
 
 
     const [current, setCurrent] = useState(0);
-    const { register, handleSubmit, formState: { errors }, clearErrors, reset } = useForm();
+    const { register, handleSubmit, formState: { errors }, clearErrors,setValue, reset } = useForm();
     function getAddressDetails(data, e) {
         console.log(e,e.nativeEvent.submitter.classList[0], typeof e.nativeEvent.submitter.classList[0] );
-        data.permanentcountry = permanentCountryName;
         data.presentcountry = presentCountryName;
         data.presentstate = presentStateName;
-        data.permanentstate = permanentStateName;
+        if(isChecked===true){
+            data.permanentstate=presentStateName;
+            data.permanentcountry=presentCountryName;
+        }
+        else{
+            data.permanentstate = permanentStateName;
+            data.permanentcountry = permanentCountryName;
+        }
         console.log(data, props.BasicDetails);
         const mergedObject = {
             'basic details': props.BasicDetails,
@@ -81,6 +108,36 @@ export default function AddressDetails(props) {
        }
         
     }
+    const isSameAddress=(e)=>{
+        console.log(isChecked)
+        setIsChecked(!isChecked);
+        console.log(isChecked)
+        console.log(presentFlatName,presentStateCode,presentStreetName,presentCity,presentCountryCode,presentMapCoordinates,presentPincode,presentArea);
+        
+        if(!isChecked)
+        {setPermanentFlatName(presentFlatName);
+        setPermanentStreetName(presentStreetName);
+        setPermanentArea(presentArea)
+        setPermanentCountryCode(presentCountryCode)
+        setPermanentStateInfo(country[presentCountryCode].States);
+        setPermanentStateCode(presentStateCode)
+        setPermanentCity(presentCity)
+        setPermanentMapCoordinates(presentMapCoordinates);
+        setPermanentPinCode(presentPincode)
+        }
+        else{
+            setPermanentFlatName("");
+        setPermanentStreetName("");
+        setPermanentArea("")
+        setPermanentCountryCode(null)
+        setPermanentStateInfo([]);
+        setPermanentStateCode(null)
+        setPermanentCity("")
+        setPermanentMapCoordinates("");
+        setPermanentPinCode("")
+
+        }
+    }
 
     return (
         <div>
@@ -100,6 +157,7 @@ export default function AddressDetails(props) {
                                             {...register('presentflatname', ({
                                                 required: '*present flat name is required'
                                             }))}
+                                            onChange={e=>setPresentFlatName(e.target.value)}
                                             className={`${errors.presentflatname ? 'input-address alerts' : 'input-address'}`}
                                             placeholder="Enter Building No /Flat Name" name="presentflatname"
                                             autoFocus />
@@ -114,7 +172,8 @@ export default function AddressDetails(props) {
                                             {...register('presentstreetname', ({
                                                 required: '*present street name is required'
                                             }))}
-                                            className={`${errors.presentflatname ? 'input-address alerts' : 'input-address'}`} placeholder="Enter Street" name="presentstreetname"
+                                            onChange={e=>setPresentStreetName(e.target.value)}
+                                            className={`${errors.presentstreetname ? 'input-address alerts' : 'input-address'}`} placeholder="Enter Street" name="presentstreetname"
                                         />
                                     </div>
                                     {errors.presentstreetname && (
@@ -127,6 +186,7 @@ export default function AddressDetails(props) {
                                             {...register('presentarea', ({
                                                 required: '*present area  is required'
                                             }))}
+                                            onChange={e=>setPresentArea(e.target.value)}
                                             className={`${errors.presentarea ? 'input-address alerts' : 'input-address'}`}
                                             placeholder="Area" name="presentarea" />
                                     </div>
@@ -176,6 +236,8 @@ export default function AddressDetails(props) {
                                         <input type="text"  {...register('presentcity', ({
                                             required: '*present city is required'
                                         }))}
+                                        onChange={e=>setPresentCity(e.target.value)}
+
                                             className={`${errors.presentcity ? 'input-address alerts' : 'input-address'}`} placeholder="City" name="presentcity" id="presentcity"
                                         />
 
@@ -191,6 +253,7 @@ export default function AddressDetails(props) {
                                         <input type="text" {...register('presentmapcoordinates', ({
                                             required: '*present map coordinates is required'
                                         }))}
+                                        onChange={e=>setPresentMapCoordinates(e.target.value)}
                                             className={`${errors.presentmapcoordinates ? 'input-address alerts' : 'input-address'}`} placeholder="Enter Map Coordinates" id="presentmapcoordinates"
                                             name="presentmapcoordinates"
                                         />
@@ -205,6 +268,7 @@ export default function AddressDetails(props) {
                                         <input type="text" {...register('presentpincode', ({
                                             required: '*present pincode is required'
                                         }))}
+                                        onChange={e=>setPresentPinCode(e.target.value)}
                                             className={`${errors.presentpincode ? 'input-address alerts' : 'input-address'}`} placeholder="Pincode" name="presentpincode" id="presentpincode"
                                         />
                                     </div>
@@ -216,7 +280,7 @@ export default function AddressDetails(props) {
 
                             </div>
                             <div className="employee-form-container">
-                                <input type="checkbox" value="" className="checkboxstyle" />
+                                <input type="checkbox" value="" onChange={e=>isSameAddress(e)} className="checkboxstyle" />
 
                                 <b className="acknowledgement"
                                 >Select this Checkbox if the
@@ -241,8 +305,11 @@ export default function AddressDetails(props) {
                                         }))}
                                             className={`${errors.permanentflatname ? 'input-address alerts' : 'input-address'}`} placeholder="Enter Building No /Flat Name"
                                             name="permanentflatname"
-                                            id="permanentflatname" />
+                                            id="permanentflatname"
+                                            value={permanentFlatName}
+                                             />
                                     </div>
+                                    {isChecked ?  setValue("permanentflatname",presentFlatName):""}
                                     {errors.permanentflatname && (
                                         <div className="address-form-invalid-feedback">{errors.permanentflatname?.message}</div>
                                     )}
@@ -256,7 +323,9 @@ export default function AddressDetails(props) {
                                         }))}
                                             className={`${errors.permanentstreetname ? 'input-address alerts' : 'input-address'}`} placeholder="Enter Street"
                                             name="permanentstreetname"
+                                            value={permanentStreetName}
                                             id="permanentstreetname" />
+                                    {isChecked ?  setValue("permanentstreetname",permanentStreetName):""}
                                     </div>
 
                                     {errors.permanentstreetname && (
@@ -269,7 +338,10 @@ export default function AddressDetails(props) {
                                             required: '*permanent area is required'
                                         }))}
                                             className={`${errors.permanentarea ? 'input-address alerts' : 'input-address'}`} placeholder="Area" name="permanentarea" id="permanentarea"
+                                            value={permanentArea}
+                                        
                                         />
+                                         {isChecked ?  setValue("permanentarea",permanentArea):""}
                                     </div>
                                     {errors.permanentarea && (
                                         <div className="address-form-invalid-feedback" style={{marginLeft:"92px"}}>{errors.permanentarea?.message}</div>
@@ -282,8 +354,9 @@ export default function AddressDetails(props) {
                                         <label className="address-label" htmlFor="permanentcountry"><b>Country</b></label>
                                         <select name="permanentcountry"
                                             {...register('permanentcountry', ({
-                                                required: '*present country is required'
+                                                required: '*permanent country is required'
                                             }))}
+                                            value={permanentCountryCode}
                                             onChange={e => onChangeCountrypermanent(e)}
                                             className={`${errors.permanentcountry ? 'countries alerts' : 'countries'}`}
                                             id="countryId"
@@ -292,7 +365,7 @@ export default function AddressDetails(props) {
                                             <option value="">Select country...</option>
                                             {country.map((data, key) => (<option key={key} value={key} >{data.CountryName}</option>))}
                                         </select>
-
+                                        {isChecked ?  setValue("permanentcountry",permanentCountryCode):""}
                                     </div>
                                     {errors.permanentcountry && (
                                         <div className="address-form-invalid-feedback">{errors.permanentcountry?.message}</div>
@@ -306,6 +379,7 @@ export default function AddressDetails(props) {
                                             {...register('permanentstate', ({
                                                 required: '*permanent state is required'
                                             }))}
+                                            value={permanentStateCode}
                                             onChange={e => onChangeStatepermanent(e)}
                                             className={`${errors.permanentstate ? 'countries alerts' : 'countries'}`} id="stateId"
                                         >
@@ -313,6 +387,7 @@ export default function AddressDetails(props) {
                                             {permanentStateInfo.map((data, key) => (<option key={key} value={key} >{data.StateName}</option>))}
                                         </select>
                                         <br />
+                                        {isChecked ?  setValue("permanentstate",permanentStateCode):""}
                                     </div>
                                     {errors.permanentstate && (
                                         <div className="address-form-invalid-feedback">{errors.permanentstate?.message}</div>
@@ -322,11 +397,14 @@ export default function AddressDetails(props) {
                                         <input type="text" {...register('permanentcity', ({
                                             required: '*permanent city is required'
                                         }))}
+                                        value={permanentCity}
                                             className={`${errors.permanentcity ? 'input-address alerts' : 'input-address'}`}
                                             placeholder="City"
                                             name="permanentcity"
                                             id="permanentcity"
                                         />
+                                    {isChecked ?  setValue("permanentcity",permanentCity):""}
+
                                     </div>
                                     {errors.permanentcity && (
                                         <div className="address-form-invalid-feedback">{errors.permanentcity?.message}</div>
@@ -340,7 +418,9 @@ export default function AddressDetails(props) {
                                             className={`${errors.permanentmapcoordinates ? 'input-address alerts' : 'input-address'}`} placeholder="Enter Map Coordinates"
                                             name="permanentmapcoordinates"
                                             id="permanentmapcoordinates"
+                                            value={permanentMapCoordinates}
                                         />
+                                    {isChecked ?  setValue("permanentmapcoordinates",permanentMapCoordinates):""}
                                     </div>
                                     {errors.permanentmapcoordinates && (
                                         <div style={{marginLeft:"200px"}} className="address-form-invalid-feedback">{errors.permanentmapcoordinates?.message}</div>
@@ -355,7 +435,9 @@ export default function AddressDetails(props) {
                                         }))}
                                             className={`${errors.permanentpincode ? 'input-address alerts' : 'input-address'}`} placeholder="Pincode" name="permanentpincode"
                                             id="permanentpincode"
+                                            value={permanentPincode}
                                         />
+                                    {isChecked ?  setValue("permanentpincode",permanentPincode):""}
                                     </div>
                                     {errors.permanentpincode && (
                                         <div className="address-form-invalid-feedback" style={{marginLeft:"136px"}}>{errors.permanentpincode?.message}</div>
@@ -368,9 +450,6 @@ export default function AddressDetails(props) {
 
 
                         </fieldset>
-
-
-
                     </div>
                     <div className="secondbutton">
 
