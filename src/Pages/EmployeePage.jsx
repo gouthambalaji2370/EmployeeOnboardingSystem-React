@@ -12,7 +12,7 @@ export default function EmployeePage(props){
               <Header logout={props.logout}/>
         <EmployeeForm></EmployeeForm>
         {/* <h3 style={{marginTop:'100px'}}>Employee Page Works!!</h3> */}
-        <button onClick={closeout}>click!</button>
+        {/* <button onClick={closeout}>click!</button> */}
         {openAlert ? <Notifications onClose={closeout} Content={"hello this is notification"}></Notifications>:<></>}
         </div>)
 }

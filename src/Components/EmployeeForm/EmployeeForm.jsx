@@ -7,22 +7,22 @@ import './BasicDetails.css';
 
 export default function EmployeeForm(){
     const [current,setCurrent]=useState(0);
-    const phonepattern="^((\\+91-?)|0)?[0-9]{10}$";
+    const [BasicDetails,setBasicDetails]=useState({});
     const { register, handleSubmit, formState: { errors } ,clearErrors,reset  } = useForm();
    const prev=()=>{
        setCurrent(0)
    }
     function getBasicDetails(data) {
+        if(BasicDetails ==={}){
         console.log(data);
         setCurrent(1);
-        const dats2=JSON.stringify(data, null, 4)
-        console.log(dats2);
-        // console.log(name, email, role, password)
-        // axios.post('http://localhost:5000/createuser', { name: name, email: email, role: role, password: password })
-        //     .then((result) => {
-        //         console.log(result);
-        //     });
-        //     props.close()
+        setBasicDetails(data);
+    }
+        else{
+            setCurrent(1);
+
+        }
+      
     }
     return(
 <div>
@@ -70,8 +70,7 @@ export default function EmployeeForm(){
                                     message:"*last name should contain alphabets"
                                 }
                             }))}
-                            className={`${errors.lastname ? 'input-employee-form alerts' : 'input-employee-form'}`}
-                                 autoFocus />
+                            className={`${errors.lastname ? 'input-employee-form alerts' : 'input-employee-form'}`} />
                                  
                         </div>
                         {errors.lastname && (
@@ -274,7 +273,7 @@ export default function EmployeeForm(){
 
                         <h3 
                         className="sub-division">
-                            <h3 id="two">Emergency Contact</h3>
+                          Emergency Contact
                         </h3>
                         <div className="employee-form-container">
                             <label className="employee-label" htmlFor="emergencyContactName"><b>Name</b></label>
@@ -327,7 +326,7 @@ export default function EmployeeForm(){
 
         </form>
 
- <AddressDetails current={current} prev={prev}></AddressDetails>
+ <AddressDetails current={current} BasicDetails={BasicDetails} prev={prev}></AddressDetails>
 
 
     </div>
