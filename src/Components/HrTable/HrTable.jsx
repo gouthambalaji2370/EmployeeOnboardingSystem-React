@@ -5,6 +5,7 @@ import FilterComponent from "./FilterComponent";
 import Notifications from "../Notifications";
 import UserDetailsView from "../UserDetailsView/UserDetailsView";
 import { AiFillEye } from "react-icons/ai";
+import Axios from 'axios';
 import { BiPaperPlane } from "react-icons/bi";
 import './HrTable.css'
 // import '../../../node_modules/font-awesome/css/font-awesome.min.css';

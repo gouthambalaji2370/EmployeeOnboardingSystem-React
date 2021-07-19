@@ -3,12 +3,13 @@ import './Header.css';
 import { useHistory } from "react-router-dom";
 import logo from "../../Styles/images/listerlogo.png";
 
+const logoutURL='/'
 export default function Header(props) {
   const history = useHistory();
  
   //logout method
   const logout=(e)=>{
-    history.push('/')
+    history.push(logoutURL);
     localStorage.removeItem('user');
   }
     return(

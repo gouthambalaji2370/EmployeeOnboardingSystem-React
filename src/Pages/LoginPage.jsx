@@ -6,15 +6,16 @@ import axios from 'axios'
 import logo from "../Styles/images/listerlogo.png";
 import '../Styles/LoginPage.css';
 
-
+const hrURL="/hr";
+const employeeURL="/employee"
 export default function LoginPage(){
   const history = useHistory();
   useEffect(()=>{
     if(localStorage.getItem('user')==='HR'){
-      history.push('/hr')
+      history.push(hrURL)
     }
     else if(localStorage.getItem('user')==='Employee'){
-      history.push('/employee')
+      history.push(employeeURL)
     }
   })
   const { register, handleSubmit, formState: { errors } } = useForm();
