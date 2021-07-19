@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+import '../Styles/HrPage.css';
+import { AiFillCaretUp } from "react-icons/ai";
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -28,9 +29,9 @@ export default function ScrollToTop() {
   return (
     <div className="scroll-to-top">
       {isVisible && 
-        <div onClick={scrollToTop}>
-         To the Top
-        </div>}
+        <button className="scroll-to-top-style" onClick={scrollToTop}>
+         <AiFillCaretUp/>
+        </button>}
     </div>
   );
 }

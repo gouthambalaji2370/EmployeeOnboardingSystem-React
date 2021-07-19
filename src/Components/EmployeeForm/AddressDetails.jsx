@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { useForm } from "react-hook-form";
 import Notifications from '../Notifications';
 import ScrollToTop from '../ScrollToTop';
+const countryURL="https://raw.githubusercontent.com/sagarshirbhate/Country-State-City-Database/master/Contries.json";
 
 
 export default function AddressDetails(props) {
@@ -38,7 +39,7 @@ export default function AddressDetails(props) {
     }
 
     useEffect(() => {
-        Axios.get("https://raw.githubusercontent.com/sagarshirbhate/Country-State-City-Database/master/Contries.json")
+        Axios.get(countryURL)
             .then((result) => {
                 console.log(result.data);
                 setCountry(result.data.Countries);

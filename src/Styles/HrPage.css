@@ -11,6 +11,12 @@
     width: 147px;
     height: 50px;
 }
+.scroll-to-top-style{
+  position: absolute;
+  left: 10px;
+  background-color: #346751;
+  color:#D8E3E7;
+}
 .button-group:hover{
     border: 1px solid #ccc;
     background-color: #346751;
