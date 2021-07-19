@@ -1,7 +1,12 @@
-.viewicon,.view-pending{
+.viewicon{
     color:#346751;
     font-size: larger;
     margin-left: 10px;
+}
+.view-pending{
+  color:#346751;
+  font-size: larger;
+  margin-left: 75px;
 }
 .rdt_Table {
     margin-bottom: 1rem;
