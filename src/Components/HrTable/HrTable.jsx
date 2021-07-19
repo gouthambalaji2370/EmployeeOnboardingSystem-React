@@ -67,54 +67,75 @@ const HrTable = props => {
   const [approveUser,setApproveUser]=useState(false);
   const [isSubmitted,setIsSubmitted]=useState(false);
   const [reason,setReason]=useState("");
+
+  //method to submit reason
   const submitreason=()=> {
     setIsSubmitted(true);
     if(reason!==""){
+      Axios.post(process.env.REACT_APP_BASE_URL+'/reject', reason)
+            .then((result) => {
+                console.log(result);
+            });
       setRejectUser(!rejectUser);
       setReason("");
     }
     console.log(reason);
   }
+  //on change method
  const handleChange = (e) => {
      setReason(e.target.value);
 };
 
+  //method to move back from reason to reject overlay
   const rejectback=()=>{
     setUserDetails(true);
     setRejectUser(false);
-
   }
+  //close the reject reason
   const closeall=()=>{
     setRejectUser(false);
   }
 
+  //open user details view
   const openView=(row)=>{
     console.log(row)
     setRowdata(row);
     setUserDetails(!userDetails)
   }
+
+  //close user details view
   const closeView=()=>{
     setUserDetails(!userDetails)
   }
+
+  //open edit access notification  
   const openEdit=(id)=>{
     console.log(id);
     setContent("Access Provided")
     setOpenAlert(!openAlert);
   }
+
+  //open mail notification 
   const openNotification=(id)=>{
     console.log(id);
     setContent("Employee Notified")
     setOpenAlert(!openAlert);
   }
+  
+  //open approve notification
   const openApprove=(id)=>{
     console.log(id);
     setContent("Details forwarded to Greythr")
     setOpenAlert(!openAlert);
     setUserDetails(!userDetails)
   }
+
+  //close any notification
   const closeout=()=>{
       setOpenAlert(!openAlert);
   }
+
+  //open reject reason overlay
   const rejectview = () =>{
     setUserDetails(!userDetails)
     setRejectUser(!rejectUser);
@@ -131,6 +152,7 @@ const HrTable = props => {
         .indexOf(filterText.toLowerCase()) !== -1
   );
 
+    //pagination based component rendering
   const subHeaderComponent = useMemo(() => {
     const handleClear = () => {
       if (filterText) {

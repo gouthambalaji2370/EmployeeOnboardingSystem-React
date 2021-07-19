@@ -34,10 +34,6 @@ export default function AddressDetails(props) {
     const [permanentPincode,setPermanentPinCode]=useState("");
     const [openAlert, setOpenAlert] = useState(false);
     const [isChecked,setIsChecked]=useState(false);
-    const closeout = () => {
-        setOpenAlert(!openAlert);
-    }
-
     useEffect(() => {
         Axios.get(countryURL)
             .then((result) => {
@@ -45,6 +41,15 @@ export default function AddressDetails(props) {
                 setCountry(result.data.Countries);
             });
     }, [])
+
+    //notifications close method
+    const closeout = () => {
+        setOpenAlert(!openAlert);
+    }
+
+  
+
+    //onChange methods 
     const onChangeCountrypresent = (e) => {
         console.log("present country", e.target.value);
         setPresentCountryCode(e.target.value);
@@ -73,6 +78,8 @@ export default function AddressDetails(props) {
 
     const [current, setCurrent] = useState(0);
     const { register, handleSubmit, formState: { errors }, clearErrors,setValue, reset } = useForm();
+    
+    // method to get address details of the employee logged in
     function getAddressDetails(data, e) {
         console.log(e,e.nativeEvent.submitter.classList[0], typeof e.nativeEvent.submitter.classList[0] );
         data.presentcountry = presentCountryName;
@@ -110,6 +117,8 @@ export default function AddressDetails(props) {
        }
         
     }
+    
+    //checkbox onChange to repeat the present and permanent address
     const isSameAddress=(e)=>{
         console.log(isChecked)
         setIsChecked(!isChecked);

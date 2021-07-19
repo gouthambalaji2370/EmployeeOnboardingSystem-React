@@ -17,6 +17,7 @@ export default function CreateInvite(props) {
     const [role, setRole] = useState("");
     const [password, setPassword] = useState("");
 
+    //On Change methods
     const changeName = (e) => {
         clearErrors('firstname');
         setName(e.target.value)
@@ -34,6 +35,7 @@ export default function CreateInvite(props) {
         setPassword(e.target.value)
     }
 
+    //Method to create a employee entry
     function createUser(data) {
         console.log(data);
         const dats2=JSON.stringify(data, null, 4)

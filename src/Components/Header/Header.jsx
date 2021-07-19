@@ -6,6 +6,7 @@ import logo from "../../Styles/images/listerlogo.png";
 export default function Header(props) {
   const history = useHistory();
  
+  //logout method
   const logout=(e)=>{
     history.push('/')
     localStorage.removeItem('user');

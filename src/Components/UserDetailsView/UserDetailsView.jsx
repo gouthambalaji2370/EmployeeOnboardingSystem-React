@@ -10,12 +10,17 @@ export default function UserDetailsView(props){
   })
   const [addressDetails,setAddressDetails]=useState(false);
   const [basicDetails,setBasicDetails]=useState(false);
+  
+
+  //open Addressdetails on click 
   const openAddressDetails =()=>{
     if(basicDetails===true){
       setBasicDetails(!basicDetails);
     }
     setAddressDetails(!addressDetails);
   }
+  
+    //open basic details on click 
   const openBasicDetails =()=>{
     if(addressDetails===true){
       setAddressDetails(!addressDetails)

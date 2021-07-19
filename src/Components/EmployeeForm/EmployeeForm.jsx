@@ -10,9 +10,12 @@ export default function EmployeeForm(){
     const [current,setCurrent]=useState(0);
     const [BasicDetails,setBasicDetails]=useState({});
     const { register, handleSubmit, formState: { errors } ,clearErrors,reset  } = useForm();
-   const prev=()=>{
+   
+    //stepper previous method
+    const prev=()=>{
        setCurrent(0)
    }
+   //method to obtain basic details
     function getBasicDetails(data) {
         console.log(data);
         setCurrent(1);

@@ -146,6 +146,7 @@ export default function HrPage(props){
  
   const [invite,setInvite]=useState(false);
   
+  //create invite overlay open method
   const openform=()=>{
     setInvite(!invite)
   }
