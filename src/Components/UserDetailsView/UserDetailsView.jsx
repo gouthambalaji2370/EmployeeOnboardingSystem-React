@@ -31,7 +31,7 @@ export default function UserDetailsView(props){
     <div className="detail-modal-content">
     <div className="modal-body form-class">
       <div id="basicDetails">
-      <div  style={{display:'flex'}}>
+      <div  className="display-flex">
             <h3 className="user-heading">Basic Details</h3>
             {!basicDetails ?<button className="view-sub" onClick={e=>openBasicDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
             {basicDetails ?<button className="view-sub" onClick={e=>openBasicDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}
@@ -68,7 +68,7 @@ export default function UserDetailsView(props){
 
           </div>       
           <div id="addressDetails">
-          <div style={{display:'flex'}}>
+          <div className="display-flex" >
             <h3>Address Details</h3>
             {!addressDetails ?<button type="button"  className="view-sub" onClick={e=>openAddressDetails()}><BiPlusCircle></BiPlusCircle></button>:<></>}
             {addressDetails ?<button type="button"  className="view-sub" onClick={e=>openAddressDetails()}><BiMinusCircle></BiMinusCircle></button>:<></>}

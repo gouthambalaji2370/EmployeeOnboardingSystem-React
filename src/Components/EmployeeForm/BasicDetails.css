@@ -372,6 +372,7 @@ button{
     background-color: #04AA6D;
 
 }
+
 .row {
     display: flex;
 }
@@ -529,7 +530,21 @@ button{
     border-radius: 12px;
     outline: none; 
 }
-
+.mandatory-asterick{
+    color : red;
+}
+.margin-left-60{
+    margin-left:60px;
+}
+.margin-left-200{
+    margin-left:200px;
+}
+.margin-left-136{
+    margin-left:136px;
+}
+.margin-left-92{
+    margin-left:92px;
+}
 #basictag {
     text-align: left;
     padding-left: 28px;
@@ -537,6 +552,7 @@ button{
     padding-top: 10px;
     font-size: 1.5em;
     color: white;
+    height: 50px;
     margin-top: -53.4px;
     margin-right: -3px;
     margin-left: -3px

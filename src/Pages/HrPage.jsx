@@ -155,14 +155,14 @@ export default function HrPage(props){
         <Header logout={props.logout}/>
         <div id="interface">
     <div className="heading-2">
-      <h1 style={{position: "absolute",left: "122px", top: "74px"}}>HR Dashboard</h1>
-      <button className="button-group" style={{position: 'absolute',left: '1141px', top: '192px'}} onClick={e=>openform()} >Create Invite</button>
+      <h1 className="h1-style">HR Dashboard</h1>
+      <button className="button-group button-absolute-hr"  onClick={e=>openform()} >Create Invite</button>
 
     </div>
     
       
   
-        <Styles style={{marginTop:"130px"}}>
+        <Styles className="table-style">
       <HrTable data={data} />
       </Styles>
   

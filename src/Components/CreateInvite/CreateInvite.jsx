@@ -50,7 +50,7 @@ export default function CreateInvite(props) {
             <div className="create-invite-modal-content" >
                 <div className="create-invite-modal-head">
 
-                    <h4 className="modal-top alert-text" style={{ marginLeft: 12 }}>Create Invite</h4>
+                    <h4 className="modal-top alert-text margin-left-12" >Create Invite</h4>
                     <button type="button" className="modal-close-button-invite" onClick={props.close}>&times;</button>
                 </div>
 

@@ -61,7 +61,7 @@ export default function LoginPage(){
                 className={`${errors.user_email ? 'input-data alert' : 'input-data'}`}
                  placeholder="Username" onChange={e=>changeUserName(e)}/>
                    {errors.user_email && (
-            <div className="invalid-feedback" style={{top: '69px',left: '131px'}}><span>{errors.user_email.message}</span></div>
+            <div className="invalid-feedback-1" ><span>{errors.user_email.message}</span></div>
           )}
                 </div>
               
@@ -83,7 +83,7 @@ export default function LoginPage(){
                 className={`${errors.user_password ? 'input-data alert' : 'input-data'}`}
                 id="Password" placeholder="Password" onChange={e=>changePassword(e)}/><br />
                 {errors.user_password && (
-            <div className="invalid-feedback" style={{top: "163px",left: "131px"}}><span>{errors.user_password.message}</span></div>
+            <div className="invalid-feedback-2"><span>{errors.user_password.message}</span></div>
           )}
               </div>
               

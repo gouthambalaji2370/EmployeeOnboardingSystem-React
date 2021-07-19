@@ -27,8 +27,20 @@ body {
     display: flex;
     padding: 15px;
 }
-.invalid-feedback{
+/* .invalid-feedback{
     color: red;
+    margin-left: 165px;
+  } */
+  .invalid-feedback-2{
+    color: red;
+    margin-left: 165px;
+    top: 163px;
+    left: 131px
+  }
+  .invalid-feedback-1{
+    color: red;
+    top: 69px;
+    left: 131px;
     margin-left: 165px;
   }
 

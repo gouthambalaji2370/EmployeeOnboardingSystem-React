@@ -33,19 +33,19 @@ export default function EmployeeForm(){
             <div>
             
                 <div className="wholefieldset">
-                <h3 id="basictag"  style={{backgroundColor:"#2F5D62",height:"50px" }}>
+                <h3 id="basictag">
                         Basic Details
                     </h3>
                     <fieldset id="field1">
 
                         <div className="employee-form-container">
-                            <label htmlFor="FirstName" className="employee-label" id="f1"><b>First Name</b></label>
+                            <label htmlFor="FirstName" className="employee-label" id="f1"><b>First Name <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"  placeholder="Enter First Name" name="firstname"
                                {...register('firstname', ({
-                                required: '*first Name is required',
+                                required: '*First Name is required',
                                 pattern:{
                                     value:/^[a-zA-Z]*$/,
-                                    message:"*first name should contain alphabets"
+                                    message:"*First name should contain alphabets"
                                 }
                             }))}
                             className={`${errors.firstname ? 'input-employee-form alerts' : 'input-employee-form'}`}
@@ -57,12 +57,12 @@ export default function EmployeeForm(){
                             )}
 
                         <div className="employee-form-container">
-                            <label htmlFor="LastName" className="employee-label"><b>Last Name</b></label>
+                            <label htmlFor="LastName" className="employee-label"><b>Last Name  <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"  name="lastname" placeholder="Enter last name"  {...register('lastname', ({
-                                required: '*last Name is required',
+                                required: '*Last Name is required',
                                 pattern:{
                                     value:/^[a-zA-Z]*$/,
-                                    message:"*last name should contain alphabets"
+                                    message:"*Last name should contain alphabets"
                                 }
                             }))}
                             className={`${errors.lastname ? 'input-employee-form alerts' : 'input-employee-form'}`} />
@@ -73,12 +73,12 @@ export default function EmployeeForm(){
                             )}
                             <div>
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="PhoneNumber"><b>Contact Number</b></label>
+                            <label className="employee-label" htmlFor="PhoneNumber"><b>Contact Number <span className="mandatory-asterick">*</span></b></label>
                             <input type="tel" {...register('phonenumber', ({
-                                required: '*contact number is required',
+                                required: '*Contact number is required',
                                 pattern:{
                                     value:/^[0-9\b]+$/,
-                                    message:"*contact number should contain numbers"
+                                    message:"*Contact number should contain numbers"
                                 },
                                 minLength:{
                                     value:10,
@@ -93,14 +93,14 @@ export default function EmployeeForm(){
                             )} 
                             </div>
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="EmailID"><b>Email ID</b></label>
+                            <label className="employee-label" htmlFor="EmailID"><b>Email ID <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"  placeholder="Enter Email ID"
                              name="email"
                              {...register('email', ({
-                                required: '*email is required',
+                                required: '*Email is required',
                                 pattern:{
                                     value:/\S+@\S+\.\S+/,
-                                    message:"*enter a valid email"
+                                    message:"*Enter a valid email"
                                 }
                             }))}
                             className={`${errors.email ? 'input-employee-form alerts' : 'input-employee-form'}`} id="email"
@@ -111,10 +111,10 @@ export default function EmployeeForm(){
                             )} 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="blood"><b>Blood Group</b></label>
+                            <label className="employee-label" htmlFor="blood"><b>Blood Group <span className="mandatory-asterick">*</span></b></label>
                             <select id="bloodGroup"
                             {...register('bloodgroup', ({
-                                required: '*bloodgroup is required',
+                                required: '*Bloodgroup is required',
                             }))}
                             className={`${errors.bloodgroup ? 'blood-select alerts' : 'blood-select'}`}
                              placeholder="Enter Blood Group"
@@ -138,14 +138,14 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="aadhar"><b>Aadhar Number</b></label>
+                            <label className="employee-label" htmlFor="aadhar"><b>Aadhar Number <span className="mandatory-asterick">*</span></b></label>
                             <input type="text" 
                             
                             {...register('aadharNumber', ({
-                                required: '*aadhar number is required',
+                                required: '*Aadhar number is required',
                                 pattern:{
                                     value:/[0-9]*/,
-                                    message:"*enter a valid aadhar number"
+                                    message:"*Enter a valid aadhar number"
                                 },
                                 minLength:{
                                     value: 12,
@@ -166,10 +166,10 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="dob"><b>Date Of Birth</b></label>
+                            <label className="employee-label" htmlFor="dob"><b>Date Of Birth  <span className="mandatory-asterick">*</span></b></label>
                             <input type="text" 
                               {...register('dob', ({
-                                required: '*dob is required',
+                                required: '*DOB is required',
                             }))}
                             className={`${errors.dob ? 'input-employee-form alerts' : 'input-employee-form'}`}
                              name="dob" id="dob"  placeholder="MM/DD/YY"
@@ -189,13 +189,13 @@ export default function EmployeeForm(){
 
 
                         <div className="radio">
-                            <label className="employee-label" htmlFor="gender" className="genderlabel"><b>Gender</b></label>
+                            <label className="employee-label" htmlFor="gender" className="genderlabel"><b>Gender <span className="mandatory-asterick">*</span></b></label>
                             <div className="gendersetup"><input type="radio" id="male" name="gender"     {...register('gender', ({
-                                required: '*gender is required',
+                                required: '*Gender is required',
                             }))} value="male"  />
                             <p className="paragraphgender">Male</p>
                             <input type="radio" id="female" name="gender"  {...register('gender', ({
-                                required: '*gender is required',
+                                required: '*Gender is required',
                             }))} value="female"  />
                             <p className="paragraphgender">Female</p>
                             </div>
@@ -206,7 +206,7 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="sslc"><b>SSLC Score</b></label>
+                            <label className="employee-label" htmlFor="sslc"><b>SSLC Score <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"   {...register('sslc', ({
                                 required: '*SSLC score is required',
                             }))}
@@ -220,7 +220,7 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="hsc"><b>HSC Score</b></label>
+                            <label className="employee-label" htmlFor="hsc"><b>HSC Score <span className="mandatory-asterick">*</span></b></label>
                             <input type="text" {...register('hsc', ({
                                 required: '*HSC score is required',
                             }))}
@@ -234,7 +234,7 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="ug"><b>UG Score</b></label>
+                            <label className="employee-label" htmlFor="ug"><b>UG Score <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"  {...register('ug', ({
                                 required: '*UG score is required',
                             }))}
@@ -246,9 +246,9 @@ export default function EmployeeForm(){
                             )} 
 
                         <div className="employee-form-container">
-                            <label className="employee-label"htmlFor="fatherName"><b>Father's Name</b></label>
+                            <label className="employee-label"htmlFor="fatherName"><b>Father's Name <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"  {...register('fathername', ({
-                                required: '*father name is required',
+                                required: '*Father name is required',
                             }))}
                             className={`${errors.fathername ? 'input-employee-form alerts' : 'input-employee-form'}`} placeholder="Enter Father's Name" name="fathername" id="fatherName"
                                  />
@@ -259,9 +259,9 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="motherName"><b>Mother's Name</b></label>
+                            <label className="employee-label" htmlFor="motherName"><b>Mother's Name <span className="mandatory-asterick">*</span></b></label>
                             <input type="text" {...register('mothername', ({
-                                required: '*mother name is required',
+                                required: '*Mother name is required',
                             }))}
                             className={`${errors.mothername ? 'input-employee-form alerts' : 'input-employee-form'}`} placeholder="Enter Mother's Name" name="mothername" id="motherName"
                                  />
@@ -276,9 +276,9 @@ export default function EmployeeForm(){
                           Emergency Contact
                         </h3>
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="emergencyContactName"><b>Name</b></label>
+                            <label className="employee-label" htmlFor="emergencyContactName"><b>Name  <span className="mandatory-asterick">*</span></b></label>
                             <input type="text"  {...register('emergencyContactName', ({
-                                required: '*emergency contact name is required',
+                                required: '*Emergency contact name is required',
                             }))}
                             className={`${errors.emergencyContactName ? 'input-employee-form alerts' : 'input-employee-form'}`} placeholder="Name Of the Person" name="emergencyContactName"
                                 id="emergencyContactName"  />
@@ -288,9 +288,9 @@ export default function EmployeeForm(){
                             )} 
 
                         <div className="employee-form-container">
-                            <label className="employee-label" htmlFor="relation"><b>Relationship</b></label>
+                            <label className="employee-label" htmlFor="relation"><b>Relationship <span className="mandatory-asterick">*</span></b></label>
                             <input type="text" {...register('relation', ({
-                                required: '*emergency contact relation is required',
+                                required: 'Emergency contact relation is required',
                             }))}
                             className={`${errors.relation ? 'input-employee-form alerts' : 'input-employee-form'}`} placeholder="Relationship" name="relation" id="relation"
                                  />
@@ -301,12 +301,12 @@ export default function EmployeeForm(){
 
 
                         <div className="employee-form-container" id="present">
-                            <label className="employee-label" htmlFor="emergencyContactNumber"><b>Contact Number</b></label>
+                            <label className="employee-label" htmlFor="emergencyContactNumber"><b>Contact Number  <span className="mandatory-asterick">*</span></b></label>
                             <input type="tel" {...register('emergencyContactNumber', ({
-                                required: '*emergency contact number is required',
+                                required: '*Emergency contact number is required',
                                 pattern:{
                                     value:/^[0-9\b]+$/,
-                                    message:"*contact number should contain numbers"
+                                    message:"*Emergency contact number should contain numbers"
                                 }
                             }))}
                             className={`${errors.relation ? 'input-employee-form alerts' : 'input-employee-form'}`}  placeholder="Enter Contact Number" name="emergencyContactNumber"
