@@ -1,4 +1,4 @@
-import React ,{ useState } from 'react';
+import React ,{ useState,useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { Form} from 'react-bootstrap';
 import { useForm } from "react-hook-form";
@@ -9,6 +9,14 @@ import '../Styles/LoginPage.css';
 
 export default function LoginPage(){
   const history = useHistory();
+  useEffect(()=>{
+    if(localStorage.getItem('user')==='HR'){
+      history.push('/hr')
+    }
+    else if(localStorage.getItem('user')==='Employee'){
+      history.push('/employee')
+    }
+  })
   const { register, handleSubmit, formState: { errors } } = useForm();
     const [userName,setUserName]=useState("");
     const [password,setPassword]=useState("");
@@ -22,7 +30,7 @@ export default function LoginPage(){
    const loginmethod=(data)=> {
       console.log(data);
       console.log(userName,password)
-      axios.post('http://localhost:5000/login', { email: userName, password: password })
+      axios.post(process.env.REACT_APP_BASE_URL+'/login', { email: userName, password: password })
       .then((result) => {
          console.log(result);
       });

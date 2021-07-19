@@ -385,7 +385,6 @@ button{
     margin-top: 5px;
     line-height: 26px;
     margin-right: 10px;
-    border-color: black;
     border-radius: 12px;
     border-width: 2px;
     outline: none;
@@ -431,7 +430,6 @@ button{
     width: 300px;
     line-height: 26px;
     margin-right: 10px;
-    border-color: black;
     border-radius: 12px;
     border-width: 2px;
     outline: none;

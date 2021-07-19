@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import Axios from 'axios'
+import axios from "../../Utils/axios";
+
 import { Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form"
 
@@ -37,7 +39,7 @@ export default function CreateInvite(props) {
         const dats2=JSON.stringify(data, null, 4)
         console.log(dats2);
         console.log(name, email, role, password)
-        axios.post('http://localhost:5000/createuser', { name: name, email: email, role: role, password: password })
+        Axios.post(process.env.REACT_APP_BASE_URL+'/createuser', { name: name, email: email, role: role, password: password })
             .then((result) => {
                 console.log(result);
             });

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './BasicDetails.css';
-import axios from 'axios';
+import Axios from 'axios';
 import { useForm } from "react-hook-form";
 import Notifications from '../Notifications';
+import ScrollToTop from '../ScrollToTop';
 
 
 export default function AddressDetails(props) {
@@ -37,7 +38,7 @@ export default function AddressDetails(props) {
     }
 
     useEffect(() => {
-        axios.get("https://raw.githubusercontent.com/sagarshirbhate/Country-State-City-Database/master/Contries.json")
+        Axios.get("https://raw.githubusercontent.com/sagarshirbhate/Country-State-City-Database/master/Contries.json")
             .then((result) => {
                 console.log(result.data);
                 setCountry(result.data.Countries);
@@ -93,7 +94,7 @@ export default function AddressDetails(props) {
        if(e.nativeEvent.submitter.classList[0]==="submitbtn"){
         setOpenAlert(!openAlert);
         setContent("Registration Completed")
-        axios.post('http://localhost:5000/register', dats2)
+        Axios.post(process.env.REACT_APP_BASE_URL+'/register', dats2)
             .then((result) => {
                 console.log(result);
             });
@@ -101,7 +102,7 @@ export default function AddressDetails(props) {
        else if(e.nativeEvent.submitter.classList[0]==="saveBtn"){
         setOpenAlert(!openAlert);
         setContent("Details Saved")
-        axios.post('http://localhost:5000/save', dats2)
+        Axios.post(process.env.REACT_APP_BASE_URL+'/save', dats2)
             .then((result) => {
                 console.log(result);
             });
@@ -460,6 +461,7 @@ export default function AddressDetails(props) {
                     </div>
 
                 </div>
+                <ScrollToTop></ScrollToTop>
             </form>
             {openAlert ? <Notifications onClose={closeout} Content={content}></Notifications> : <></>}
         </div>

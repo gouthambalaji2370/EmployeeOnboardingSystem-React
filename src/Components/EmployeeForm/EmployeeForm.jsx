@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form"
+import ScrollToTop from '../ScrollToTop';
 import AddressDetails from './AddressDetails';
 import './BasicDetails.css';
 
@@ -78,6 +79,10 @@ export default function EmployeeForm(){
                                 pattern:{
                                     value:/^[0-9\b]+$/,
                                     message:"*contact number should contain numbers"
+                                },
+                                minLength:{
+                                    value:10,
+                                    message:"*Contact Number should have 10 digits"
                                 }
                             }))}
                             className={`${errors.phonenumber ? 'input-employee-form alerts' : 'input-employee-form'}`}
@@ -318,9 +323,8 @@ export default function EmployeeForm(){
                 <button type="submit" className="firstbutton" id="nextBtn">Next</button>
 
             </div>
-
+            <ScrollToTop></ScrollToTop>
         </form>
-
  <AddressDetails current={current} BasicDetails={BasicDetails} prev={prev}></AddressDetails>
 
 

@@ -6,6 +6,7 @@ import HrTable from '../Components/HrTable';
 import styled from 'styled-components';
 import '../Styles/HrPage.css';
 import data from '../Utils/data.js';
+import ScrollToTop from '../Components/ScrollToTop';
 
 const Styles = styled.div`
 .rdt_Table {
@@ -168,5 +169,6 @@ export default function HrPage(props){
   {invite ?<CreateInvite close={openform}></CreateInvite>:<></>}
   
     </div>
+    <ScrollToTop></ScrollToTop>
   </div>)
 }
