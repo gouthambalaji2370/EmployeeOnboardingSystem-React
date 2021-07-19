@@ -8,7 +8,6 @@ import { AiFillEye } from "react-icons/ai";
 import Axios from 'axios';
 import { BiPaperPlane } from "react-icons/bi";
 import './HrTable.css'
-// import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 
 const HrTable = props => {
   const columns = [
