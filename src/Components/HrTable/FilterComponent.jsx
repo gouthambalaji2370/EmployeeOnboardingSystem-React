@@ -26,7 +26,6 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
       value={filterText}
       onChange={onFilter}
     />
-    {/* <ClearButton onClick={onClear}>X</ClearButton> */}
   </>
 );
 

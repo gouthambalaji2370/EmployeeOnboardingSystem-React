@@ -37,11 +37,11 @@ export default function LoginPage(){
       });
       if (userName === 'hr@gmail.com') {
         localStorage.setItem('user', 'HR');
-        history.push('/hr')
+        history.push(hrURL)
       }
       else if (userName === 'user@gmail.com') {
         localStorage.setItem('user', 'Employee');
-        history.push('/employee');
+        history.push(employeeURL);
       }   
       }
     return(

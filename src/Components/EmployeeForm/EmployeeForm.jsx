@@ -15,6 +15,7 @@ export default function EmployeeForm(){
     const prev=()=>{
        setCurrent(0)
    }
+   
    //method to obtain basic details
     function getBasicDetails(data) {
         console.log(data);

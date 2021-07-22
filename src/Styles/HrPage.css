@@ -12,10 +12,19 @@
     height: 50px;
 }
 .scroll-to-top-style{
-  position: absolute;
-  left: 10px;
-  background-color: #346751;
+  position: fixed;
+  bottom: 50px;
+  right: 15px;
+  background-color: #2F5D62;
   color:#D8E3E7;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
 }
 .button-group:hover{
     border: 1px solid #ccc;

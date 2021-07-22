@@ -48,20 +48,20 @@ const HrTable = props => {
       width : "200px",
       cell : row => {
         if(row.status==="Incomplete")
-        return <button className="button-group-small" onClick={e=>openNotification(row.empid)}>Notify</button>
+        return <button className="button-group-small" onClick={e=>openNotification(row.empid,true)}>Notify</button>
         else if(row.status==="Pending")
         return (<><button className="view-pending" onClick={e=>openView(row)}><AiFillEye></AiFillEye></button></>)
         else if(row.status === "Completed")
-        return (<><button className="button-group-small" onClick={e=>openEdit(row.empid)}>Edit</button><button className="viewicon" onClick={e=>openView(row)}><AiFillEye></AiFillEye></button></>)
+        return (<><button className="button-group-small" onClick={e=>openNotification(row.empid,false)}>Edit</button><button className="viewicon" onClick={e=>openView(row)}><AiFillEye></AiFillEye></button></>)
         else
-        return (<><button className="button-group-small" onClick={e=>openNotification(row.empid)}>Notify</button><button className="viewicon" onClick={e=>openView(row)}><AiFillEye></AiFillEye></button></>)
+        return (<><button className="button-group-small" onClick={e=>openNotification(row.empid,true)}>Notify</button><button className="viewicon" onClick={e=>openView(row)}><AiFillEye></AiFillEye></button></>)
       },
       
     }
   ];
   const [openAlert, setOpenAlert] = useState(false);
   const [content, setContent] = useState("");
-  const [rowdata,setRowdata]=useState({});
+  const [rowData,setRowData]=useState({});
   const [userDetails,setUserDetails]=useState(false);
   const [rejectUser,setRejectUser]=useState(false);
   const [approveUser,setApproveUser]=useState(false);
@@ -99,7 +99,7 @@ const HrTable = props => {
   //open user details view
   const openView=(row)=>{
     console.log(row)
-    setRowdata(row);
+    setRowData(row);
     setUserDetails(!userDetails)
   }
 
@@ -108,23 +108,22 @@ const HrTable = props => {
     setUserDetails(!userDetails)
   }
 
-  //open edit access notification  
-  const openEdit=(id)=>{
-    console.log(id);
+
+
+  //open notification 
+  const openNotification=(id,type)=>{
+    if(type===true){
+    setContent("Employee Notified")
+    setOpenAlert(!openAlert);
+  }
+  else{
     setContent("Access Provided")
     setOpenAlert(!openAlert);
   }
-
-  //open mail notification 
-  const openNotification=(id)=>{
-    console.log(id);
-    setContent("Employee Notified")
-    setOpenAlert(!openAlert);
   }
   
   //open approve notification
   const openApprove=(id)=>{
-    console.log(id);
     setContent("Details forwarded to Greythr")
     setOpenAlert(!openAlert);
     setUserDetails(!userDetails)
@@ -180,7 +179,7 @@ const HrTable = props => {
       subHeader
       subHeaderComponent={subHeaderComponent}
     />
-      {userDetails ? <UserDetailsView closeView={closeView} approve={openApprove} reject={rejectview} employeedetails={rowdata} ></UserDetailsView>:<></>}
+      {userDetails ? <UserDetailsView closeView={closeView} approve={openApprove} reject={rejectview} employeedetails={rowData} ></UserDetailsView>:<></>}
   {openAlert ? <Notifications onClose={closeout} Content={content}></Notifications>:<></>}
   {rejectUser ?  
   <div id="myModal" className="modal fades">

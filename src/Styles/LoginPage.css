@@ -64,6 +64,8 @@ body {
     overflow: hidden;
     background-image:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../Styles/images/bg.png');
     background-size: cover;
+    overflow-y: hidden;
+
 }
 .alert{
     border-color: red;

@@ -50,30 +50,33 @@ export default function AddressDetails(props) {
   
 
     //onChange methods 
-    const onChangeCountrypresent = (e) => {
-        console.log("present country", e.target.value);
-        setPresentCountryCode(e.target.value);
+    const onChangeCountry = (e,type) => {
+        if(type===true){
+            setPresentCountryCode(e.target.value);
         setPresentStateInfo(country[e.target.value].States);
         setPresentCountryName(country[e.target.value].CountryName);
 
-    }
-    const onChangeCountrypermanent = (e) => {
-        console.log("permanent country", e.target.value);
-        setPermanentCountryCode(e.target.value);
-        setPermanentStateInfo(country[e.target.value].States);
-        setPermanentCountryName(country[e.target.value].CountryName);
+        }
+        else{
+            setPermanentCountryCode(e.target.value);
+            setPermanentStateInfo(country[e.target.value].States);
+            setPermanentCountryName(country[e.target.value].CountryName);
+
+        }
+        
     }
 
-    const onChangeStatepresent = (e) => {
-        console.log("present state", e.target.value);
+    const onChangeState = (e,type) => {
+        if(type==true){
         setPresentStateCode(e.target.value);
         setPresentStateName(presentStateInfo[e.target.value].StateName)
-    }
-    const onChangeStatepermanent = (e) => {
-        console.log("permanent state", e.target.value);
+        }
+        else{
         setPermanentStateCode(e.target.value);
         setPermanentStateName(permanentStateInfo[e.target.value].StateName)
+        }
     }
+   
 
 
     const [current, setCurrent] = useState(0);
@@ -123,8 +126,7 @@ export default function AddressDetails(props) {
         console.log(isChecked)
         setIsChecked(!isChecked);
         console.log(isChecked)
-        console.log(presentFlatName,presentStateCode,presentStreetName,presentCity,presentCountryCode,presentMapCoordinates,presentPincode,presentArea);
-        
+        console.log(presentFlatName,presentStateCode,presentStreetName,presentCity,presentCountryCode,presentMapCoordinates,presentPincode,presentArea);   
         if(!isChecked)
         {setPermanentFlatName(presentFlatName);
         setPermanentStreetName(presentStreetName);
@@ -212,7 +214,7 @@ export default function AddressDetails(props) {
                                             {...register('presentcountry', ({
                                                 required: '*Present country is required'
                                             }))}
-                                            onChange={e => onChangeCountrypresent(e)}
+                                            onChange={e => onChangeCountry(e,true)}
                                             className={`${errors.presentcountry ? 'countries alerts' : 'countries'}`} id="countryId">
 
                                             <option value="">Select country...</option>
@@ -231,7 +233,7 @@ export default function AddressDetails(props) {
                                             {...register('presentstate', ({
                                                 required: '*Present state is required'
                                             }))}
-                                            onChange={e => onChangeStatepresent(e)}
+                                            onChange={e => onChangeState(e,true)}
                                             className={`${errors.presentstate ? 'countries alerts' : 'countries'}`} id="stateId">
                                             <option value="" >Select state...</option>
                                             {presentStateInfo.map((data, key) => (<option key={key} value={key} >{data.StateName}</option>))}
@@ -366,7 +368,7 @@ export default function AddressDetails(props) {
                                                 required: '*Permanent country is required'
                                             }))}
                                             value={permanentCountryCode}
-                                            onChange={e => onChangeCountrypermanent(e)}
+                                            onChange={e => onChangeCountry(e,false)}
                                             className={`${errors.permanentcountry ? 'countries alerts' : 'countries'}`}
                                             id="countryId"
 
@@ -389,7 +391,7 @@ export default function AddressDetails(props) {
                                                 required: '*Permanent state is required'
                                             }))}
                                             value={permanentStateCode}
-                                            onChange={e => onChangeStatepermanent(e)}
+                                            onChange={e => onChangeState(e,false)}
                                             className={`${errors.permanentstate ? 'countries alerts' : 'countries'}`} id="stateId"
                                         >
                                             <option value="">Select state...</option>
